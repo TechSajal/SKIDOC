@@ -54,21 +54,17 @@
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
-
     <TextView
         android:id="@+id/textviewtroublesignin"
         android:clickable="true"
         android:contextClickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
         android:layout_below="@+id/textinputlayoutstarted"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/varela_round"
         android:textColor="@color/black"
-        android:focusable="true"
-        tools:targetApi="m" />
+        android:focusable="true" />
 
 </RelativeLayout>
