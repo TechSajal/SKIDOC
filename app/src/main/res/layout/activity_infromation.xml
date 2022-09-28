@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.InfromationActivity">
+
+    <ImageView
+        android:id="@+id/act_inf_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_arrow_back" />
+    <FrameLayout
+        android:id="@+id/act_help"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/varela_round"
+            android:text="Help"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:drawableLeftCompat="@drawable/ic_help" />
+
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/enteryourdetails_act"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/act_inf_back"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/varela_round"
+        android:text="Enter your remaining Details"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_inf_container_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enteryourdetails_act"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:startIconDrawable="@drawable/ic_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/act_inf_edittext_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:fontFamily="@font/varela_round"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_inf_container_phoneno"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Phoneno"
+        android:layout_below="@+id/act_inf_container_email"
+        android:layout_margin="10dp"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        app:startIconDrawable="@drawable/ic_phone"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/act_inf_edittext_phoneno"
+            android:enabled="false"
+            android:fontFamily="@font/varela_round"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_inf_container_fullname"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/act_inf_container_phoneno"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        app:startIconDrawable="@drawable/ic_person"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/act_inf_edittext_fullname"
+            android:fontFamily="@font/varela_round"
+            android:textStyle="bold"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_inf_container_bloodgroup"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/act_inf_container_fullname"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Blood Group"
+        android:overScrollMode="never"
+        app:startIconDrawable="@drawable/ic_blood">
+
+        <AutoCompleteTextView
+            android:id="@+id/act_inf_edittext_bloodgroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/varela_round"
+            android:inputType="none"
+            android:overScrollMode="never"
+            android:scrollbars="vertical"
+            android:text="A+"
+            android:textColorLink="#00FFFFFF"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_inf_container_gender"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/act_inf_container_bloodgroup"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Gender"
+        android:overScrollMode="never"
+        app:startIconDrawable="@drawable/ic_blood">
+
+        <AutoCompleteTextView
+            android:id="@+id/act_inf_edittext_gender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/varela_round"
+            android:inputType="none"
+            android:overScrollMode="never"
+            android:scrollbars="vertical"
+            android:text="Male"
+            android:textColorLink="#00FFFFFF"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/act_inf_container_age"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Age"
+        android:layout_below="@+id/act_inf_container_gender"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        app:startIconDrawable="@drawable/ic_age"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/act_inf_edittext_age"
+            android:fontFamily="@font/varela_round"
+            android:textStyle="bold"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/act_inf_continue"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/act_inf_container_age"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#747473"
+        android:fontFamily="@font/varela_round"
+        android:text="Continue"
+        android:textStyle="bold" />
+
+</RelativeLayout>
