@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">HumanDisClass</string>
     <string-array name="BloodGroup">
-       <item>o+</item>
+        <item>o+</item>
         <item>o-</item>
         <item>A+</item>
         <item>A-</item>

@@ -86,8 +86,9 @@
         app:startIconDrawable="@drawable/ic_lock">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/text_input_password_signin"
+            android:id="@+id/text_input_password_login"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
             android:fontFamily="@font/varela_round"
             android:inputType="textPassword"
@@ -95,7 +96,6 @@
             android:maxLength="16"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
-
     <TextView
         android:id="@+id/bycontinuing_signin"
         android:layout_width="wrap_content"

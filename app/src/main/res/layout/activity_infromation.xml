@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/act_inf_back"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/varela_round"
         android:text="Enter your remaining Details"
         android:textColor="@color/black"
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/enteryourdetails_act"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:hint="Email"
@@ -76,42 +76,54 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/act_inf_container_phoneno"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Phoneno"
-        android:layout_below="@+id/act_inf_container_email"
-        android:layout_margin="10dp"
-        android:inputType="phone"
         android:layout_width="match_parent"
-        app:startIconDrawable="@drawable/ic_phone"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/act_inf_container_email"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Phoneno"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        app:startIconDrawable="@drawable/ic_phone">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/act_inf_edittext_phoneno"
-            android:enabled="false"
-            android:fontFamily="@font/varela_round"
-            android:textStyle="bold"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/varela_round"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/act_inf_container_fullname"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/act_inf_container_phoneno"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:hint="Full Name"
         android:inputType="textPersonName"
-        android:layout_below="@+id/act_inf_container_phoneno"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        app:startIconDrawable="@drawable/ic_person"
-        android:layout_height="wrap_content">
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/act_inf_edittext_fullname"
-            android:fontFamily="@font/varela_round"
-            android:textStyle="bold"
-            android:inputType="textPersonName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/varela_round"
+            android:inputType="textPersonName"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -121,7 +133,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/act_inf_container_fullname"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:hint="Blood Group"
@@ -150,7 +162,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/act_inf_container_bloodgroup"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:hint="Gender"
@@ -175,20 +187,25 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/act_inf_container_age"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Age"
-        android:layout_below="@+id/act_inf_container_gender"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        app:startIconDrawable="@drawable/ic_age"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/act_inf_container_gender"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Age"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        app:startIconDrawable="@drawable/ic_age">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/act_inf_edittext_age"
-            android:fontFamily="@font/varela_round"
-            android:textStyle="bold"
-            android:inputType="number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:fontFamily="@font/varela_round"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -196,12 +213,13 @@
         android:id="@+id/act_inf_continue"
         android:layout_width="350dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/act_inf_container_age"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="#747473"
         android:fontFamily="@font/varela_round"
         android:text="Continue"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:windowSoftInputMode="adjustResize" />
 
 </RelativeLayout>

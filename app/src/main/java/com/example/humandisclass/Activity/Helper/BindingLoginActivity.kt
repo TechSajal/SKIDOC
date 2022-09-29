@@ -1,8 +1,11 @@
 package com.example.humandisclass.Activity.Helper
 
 import android.util.Patterns
+import com.example.humandisclass.R
+import com.example.humandisclass.databinding.ActivityInfromationBinding
 import com.example.humandisclass.databinding.ActivityLoginBinding
 import com.example.humandisclass.databinding.ActivitySigninBinding
+import com.google.android.material.textfield.TextInputLayout
 
 class BindingLoginActivity {
 
@@ -24,7 +27,7 @@ class BindingLoginActivity {
     }
 
     fun PasswordLoginBinding(binding: ActivityLoginBinding) {
-        binding.textInputPasswordSignin.setOnFocusChangeListener { _, focused ->
+        binding.textInputPasswordLogin.setOnFocusChangeListener { _, focused ->
             if(!focused){
                 binding.containerPasswordLogin.helperText = validPassword(binding)
             }
@@ -33,7 +36,7 @@ class BindingLoginActivity {
     }
 
     fun validPassword(binding: ActivityLoginBinding):String?{
-        val passwordtext = binding.textInputPasswordSignin.text.toString()
+        val passwordtext = binding.textInputPasswordLogin.text.toString()
         if (passwordtext.length<8){
             return  "Minimum 8 Character Password"
         }
@@ -48,6 +51,7 @@ class BindingLoginActivity {
         }
         return null
     }
+
 
 
 }
@@ -96,27 +100,107 @@ class BindingSigninActivity{
         return null
     }
 
-    fun phonenologinbinding(binding: ActivitySigninBinding){
-        binding.textInputPhoneSignin.setOnFocusChangeListener { _, focused ->
+    fun phonenosigninbinding(binding: ActivitySigninBinding){
+        binding.textInputConfirmpasswordSignin.setOnFocusChangeListener { _, focused ->
             if(!focused){
-                binding.containerPhonenoSignin.helperText = validphoneno(binding)
+                binding.containerConfirmpassSignin.helperText = validphoneno(binding)
             }
         }
     }
 
     private fun validphoneno(binding: ActivitySigninBinding): String? {
-    val phoneno = binding.textInputPhoneSignin.text.toString()
-        if(!Patterns.PHONE.matcher(phoneno).matches()){
-            return "Plz Enter Valid PhoneNo."
+    val confirmpasswordtext = binding.textInputConfirmpasswordSignin.text.toString()
+        if (confirmpasswordtext.length<8){
+            return  "Minimum 8 Character Password"
         }
-        if(!phoneno.matches(".*[0-9].*".toRegex())){
-            return "Must be all Digits"
+        if(!confirmpasswordtext.matches(".*[A-Z].*".toRegex())){
+            return "Must Contain 1 Upper-case Character"
         }
-        if(phoneno.length!=10){
-            return "Must be 10 Digits"
+        if(!confirmpasswordtext.matches(".*[a-z].*".toRegex())){
+            return "Must Contain 1 Lower-case Character"
+        }
+        if(!confirmpasswordtext.matches(".*[!@#$%^&*()_+=-].*".toRegex())){
+            return "Must Contain 1 Special Character (!@#\$%^&*()_+=-)"
+        }
+        return null
+    }
+
+
+}
+
+class BindingInfromationActivity(){
+    fun ageInfromationbinding(binding: ActivityInfromationBinding){
+        binding.actInfEdittextAge.setOnFocusChangeListener { _, focused ->
+            if (focused){
+                binding.actInfContainerAge.helperText = validage(binding)
+            }
+            if(!focused){
+                binding.actInfContainerAge.helperText = validage(binding)
+            }
+        }
+    }
+
+     fun validage(binding: ActivityInfromationBinding): String? {
+        val age = binding.actInfEdittextAge.text.toString()
+            if (age.isEmpty()){
+                return "fill age"
+            }
+            if (!age[0].toString().matches(".*[1-9].*".toRegex())){
+                return "Age cannot be started from 0"
+            }
+            if (age[1].toString().matches(".*[0-9].*".toRegex())){
+                return null
+            }
+            if (age[2].toString().matches(".*[0-9].*".toRegex())){
+                return null
+            }
+
+        return null
+    }
+
+    fun phonenoInfromationbinding(binding: ActivityInfromationBinding){
+        binding.actInfEdittextPhoneno.setOnFocusChangeListener { _, focused ->
+            if (focused){
+                binding.actInfContainerPhoneno.helperText = validphoneno(binding)
+            }
+            if(!focused){
+                binding.actInfContainerPhoneno.helperText = validphoneno(binding)
+            }
+        }
+    }
+
+     fun validphoneno(binding: ActivityInfromationBinding): String? {
+       val phoneno = binding.actInfEdittextPhoneno.text.toString()
+        if (phoneno.length<10){
+            return "Invalid phone no"
+        }
+        if (!Patterns.PHONE.matcher(phoneno).matches()){
+            return "Invalid phone no"
+        }
+        return null
+    }
+
+    fun fullnameInfromationbinding(binding: ActivityInfromationBinding){
+        binding.actInfEdittextFullname.setOnFocusChangeListener { _, focused ->
+            if(focused){
+                binding.actInfContainerFullname.helperText = validfullname(binding)
+            }
+            if(!focused){
+                binding.actInfContainerFullname.helperText = validfullname(binding)
+            }
+        }
+    }
+     fun validfullname(binding: ActivityInfromationBinding): String? {
+        val fullname = binding.actInfEdittextFullname.text.toString()
+        if(!fullname.matches(".*[A-Z].*".toRegex())){
+            return "plz enter correct name"
+        }
+        if(!fullname.matches(".*[a-z].*".toRegex())){
+            return "plz enter correct name"
         }
 
-    return null
 
+        return null
     }
 }
+
