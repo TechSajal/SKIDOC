@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LandingActivity">
+
+    <FrameLayout
+        android:id="@+id/framelayoutmainact"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:background="#101C5F">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager1"
+            android:layout_width="match_parent"
+            android:layout_height="500dp" />
+
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/indicator"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/framelayoutmainact"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/varela_round"
+        android:text="Let's get started! Enter your Email id"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputlayoutstarted"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text3"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Email"
+        android:clickable="true"
+        app:startIconDrawable="@drawable/ic_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textinputedittextstarted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TextView
+        android:id="@+id/textviewtroublesignin"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textinputlayoutstarted"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/varela_round"
+        android:textColor="@color/black"
+        android:focusable="true"
+        tools:targetApi="m" />
+
+</RelativeLayout>

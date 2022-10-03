@@ -2,4 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_nav"/>
+    android:id="@+id/my_nav"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.humandisclass.Frament.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/scanFragment"
+        android:name="com.example.humandisclass.Frament.ScanFragment"
+        android:label="fragment_scan"
+        tools:layout="@layout/fragment_scan" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.humandisclass.Frament.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.humandisclass.Frament.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+</navigation>
