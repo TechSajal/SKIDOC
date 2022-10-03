@@ -9,5 +9,10 @@
         <item name="android:autofilledHighlight" tools:targetApi="o">@android:color/transparent</item>
     </style>
 
-
+    <style name="customRoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopRight">12dp</item>
+        <item name="cornerSizeTopLeft">12dp</item>
+    </style>
 </resources>
