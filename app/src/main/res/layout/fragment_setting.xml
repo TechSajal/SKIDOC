@@ -1,10 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Frament.SettingFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="match_parent">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_profile"
+            app:civ_border_color="#101C5F"
+            app:civ_border_width="3dp" />
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/profile_image"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/profile_image"
+            android:fontFamily="@font/varela_round"
+            android:text="Sajal Kaushal"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_name"
+            android:layout_alignStart="@+id/profile_name"
+            android:layout_marginEnd="7dp"
+            android:fontFamily="@font/varela_round"
+            android:text="sajalkaushal3@gmail.com"
+            android:textColor="#434242"
+            android:textSize="14dp" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/edit"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/profile_email"
+            android:layout_alignStart="@+id/profile_email"
+            android:fontFamily="@font/varela_round"
+            android:text="Edit"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/setting_show_phoneno"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_image"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Phone no."
+            android:textColorHint="#101C5F"
+            app:endIconMode="clear_text"
+            app:helperTextTextColor="@android:color/holo_red_dark"
+            app:startIconDrawable="@drawable/ic_phone"
+            app:suffixTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/setting_show_phoneno_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/varela_round"
+                android:text="9958969106"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/setting_show_blood_group"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setting_show_phoneno"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Blood Group"
+            android:textColorHint="#101C5F"
+            app:endIconMode="clear_text"
+            app:helperTextTextColor="@android:color/holo_red_dark"
+            app:startIconDrawable="@drawable/ic_blood"
+            app:suffixTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/setting_show_blood_group_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/varela_round"
+                android:text="B+"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/setting_show_gender"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setting_show_blood_group"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Gender"
+            android:textColorHint="#101C5F"
+            app:endIconMode="clear_text"
+            app:helperTextTextColor="@android:color/holo_red_dark"
+            app:startIconDrawable="@drawable/ic_gender"
+            app:suffixTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/setting_show_gender_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/varela_round"
+                android:text="Male"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/setting_show_age"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setting_show_gender"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Age"
+            android:textColorHint="#101C5F"
+            app:endIconMode="clear_text"
+            app:helperTextTextColor="@android:color/holo_red_dark"
+            app:startIconDrawable="@drawable/ic_age"
+            app:suffixTextColor="#000000">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/setting_show_age_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/varela_round"
+                android:text="21"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/setting_skin_disease"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setting_show_age"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:hint="Any Skin Disease"
+        android:textColorHint="#101C5F"
+        app:startIconDrawable="@drawable/ic_hospital">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/setting_skin_disease_autocomptextview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:focusable="false"
+            android:fontFamily="@font/varela_round"
+            android:text="No"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logout"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/setting_skin_disease"
+        android:layout_alignEnd="@+id/setting_skin_disease"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/botton"
+        android:fontFamily="@font/varela_round"
+        android:foregroundGravity="center_horizontal"
+        android:text="Logout"
+        android:textColor="@color/white" />
 
 
 
-</FrameLayout>
+
+    </RelativeLayout>

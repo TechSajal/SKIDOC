@@ -30,7 +30,7 @@
     <TextView
         android:id="@+id/disc_common_skin_alergy"
         android:layout_width="match_parent"
-        android:layout_height="41dp"
+        android:layout_height="42dp"
         android:layout_below="@+id/text_common_skin_alergy_name"
         android:layout_marginHorizontal="5dp"
         android:ellipsize="end"
@@ -42,14 +42,14 @@
     <TextView
         android:id="@+id/contact_skin"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="12dp"
         android:layout_below="@+id/disc_common_skin_alergy"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="5dp"
         android:ellipsize="end"
         android:fontFamily="@font/varela_round"
-        android:maxLines="2"
+        android:maxLines="1"
         android:textColor="#19E622"
         android:textSize="9dp" />
 

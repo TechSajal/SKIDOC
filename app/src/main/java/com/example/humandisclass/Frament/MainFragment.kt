@@ -35,8 +35,8 @@ class MainFragment : Fragment() {
          )
         val skindis = mutableListOf(
               CommonSkinDis(R.drawable.dermatitis,"Contact dermatitis","It is an itchy rash caused by direct contact with a substance or an allergic reaction to it. The rash isn't contagious, but it can be very uncomfortable.","Swelling, burning or tenderness,dry cracked skin"),
-               CommonSkinDis(R.drawable.chronic_hives,"Chronic hives","It is a skin reaction that causes itchy welts. Chronic hives are welts that last for more than six weeks and return often over months or years. Often, the cause of chronic hives isn't clear.","itchiness,painful swelling"),
-               CommonSkinDis(R.drawable.atopic_dermatitis,"Atopic dermatitis","It is a condition that causes dry, itchy and inflamed skin. It's common in young children but can occur at any age","dry cracked skin,itchiness,thickened skin"),
+               CommonSkinDis(R.drawable.chronic_hives,"Chronic hives","It is a skin reaction that causes itchy welts. Chronic hives are welts that last for more than six weeks and return often over months or years. Often, the cause of chronic hives isn't clear.","Itchiness,painful swelling"),
+               CommonSkinDis(R.drawable.atopic_dermatitis,"Atopic dermatitis","It is a condition that causes dry, itchy and inflamed skin. It's common in young children but can occur at any age","Dry cracked skin,itchiness,thickened skin"),
                CommonSkinDis(R.drawable.angiodema,"Angioedema","It is swelling underneath the skin. It's usually a reaction to a trigger, such as a medicine or something you're allergic to.","Abdominal cramping,Breathing difficulty,Swollen eyes and mouth,Swollen lining of the eyes")
         )
         recyclerViewCommonSkinDis =view.findViewById(R.id.recyclerviewcommondisease)

@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/bottom_nav_colors.xml" value="0.1" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/botton.xml" value="0.2285" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/corner.xml" value="0.1" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_age.xml" value="0.193" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_arrow_back.xml" value="0.193" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_baseline_image_search_24.xml" value="0.1" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_blood.xml" value="0.2285" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_check_circle.xml" value="0.1855" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_email.xml" value="0.217" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_information.xml" value="0.1705" />
@@ -15,6 +17,7 @@
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/saj.xml" value="0.2555" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout-v23/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_infromation.xml" value="0.25" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_landing.xml" value="0.2572463768115942" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_login.xml" value="0.536" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_signin.xml" value="0.2359375" />
@@ -24,7 +27,7 @@
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/dropdown_gender.xml" value="0.23777173913043478" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/dropdown_item.xml" value="0.264" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/fragment_main.xml" value="0.264" />
-        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/fragment_setting.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/fragment_setting.xml" value="0.264" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/item.xml" value="0.1" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/main1.xml" value="0.176" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19444444444444445" />

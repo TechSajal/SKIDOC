@@ -16,6 +16,19 @@
         <item>Female</item>
         <item>Others</item>
     </string-array>
+
+
+    <string-array name="SkinDisease">
+        <item>Acne</item>
+        <item>Alopecia Areata</item>
+        <item>Eczema</item>
+        <item>Proriasis</item>
+        <item>Raynaud</item>
+        <item>Rosacea</item>
+        <item>Vitiligo</item>
+        <item>Chronic Hives</item>
+        <item>Contact dermatitis</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

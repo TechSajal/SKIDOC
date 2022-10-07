@@ -133,13 +133,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_common_skin_disease"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/common_skin_allergy"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:nestedScrollingEnabled="false"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:nestedScrollingEnabled="false" />
 
     <FrameLayout
         android:layout_width="match_parent"
