@@ -12,7 +12,18 @@
     <style name="customRoundedImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">0dp</item>
-        <item name="cornerSizeTopRight">12dp</item>
-        <item name="cornerSizeTopLeft">12dp</item>
+        <item name="cornerSizeTopRight">13dp</item>
+        <item name="cornerSizeTopLeft">13dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="common_skin_alergy_rountimage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopRight">10dp</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeBottomLeft">10dp</item>
+        <item name="cornerSizeBottomRight">10dp</item>
     </style>
 </resources>

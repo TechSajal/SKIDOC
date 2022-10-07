@@ -3,21 +3,25 @@
     android:id="@+id/relativelayout_commondiseases"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="150dp"
+    android:layout_width="135dp"
     android:layout_margin="5dp"
     android:layout_height="wrap_content">
+
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/image_commondisease"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_margin="3dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
         android:scaleType="fitXY"
-        app:shapeAppearanceOverlay="@style/customRoundedImageView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/customRoundedImageView" />
 
     <TextView
         android:id="@+id/commondis_name"
@@ -36,7 +40,7 @@
     <TextView
         android:id="@+id/disc_common_dis"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/commondis_name"
         android:layout_marginStart="3dp"
         android:layout_marginTop="3dp"
@@ -44,9 +48,16 @@
         android:layout_marginBottom="3dp"
         android:ellipsize="end"
         android:fontFamily="@font/varela_round"
-        android:maxLines="3"
+        android:maxLines="4"
         android:textAlignment="viewStart"
         android:textColor="#504D4D"
         android:textSize="10dp" />
+
+<!--    <View-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_below="@+id/disc_common_dis"-->
+<!--        android:background="#9F9797" />-->
 
 </RelativeLayout>

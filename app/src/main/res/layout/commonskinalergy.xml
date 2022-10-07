@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image_common_skin_alergy"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/common_skin_alergy_rountimage" />
+
+    <TextView
+        android:id="@+id/text_common_skin_alergy_name"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/image_common_skin_alergy"
+        android:layout_marginHorizontal="5dp"
+        android:fontFamily="@font/varela_round"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/disc_common_skin_alergy"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_below="@+id/text_common_skin_alergy_name"
+        android:layout_marginHorizontal="5dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/varela_round"
+        android:maxLines="3"
+        android:textAlignment="viewStart"
+        android:textSize="11dp" />
+
+    <TextView
+        android:id="@+id/contact_skin"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@+id/disc_common_skin_alergy"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/varela_round"
+        android:maxLines="2"
+        android:textColor="#19E622"
+        android:textSize="9dp" />
+
+</RelativeLayout>
