@@ -43,9 +43,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.searchFragment -> {
                     navController.navigate(R.id.scanFragment,null,options)
                 }
-                R.id.settingFragment -> {
-                    navController.navigate(R.id.settingFragment,null,options)
-                }
             }
             true
         }
@@ -67,7 +64,8 @@ class MainActivity : AppCompatActivity() {
                    bottomnavitionView.selectedItemId = R.id.scanFragment
             }
             R.id.settingtoolbar ->{
-                bottomnavitionView.selectedItemId = R.id.settingFragment
+                val intent = Intent(this,SettingActivity::class.java)
+                startActivity(intent)
 
             }
         }

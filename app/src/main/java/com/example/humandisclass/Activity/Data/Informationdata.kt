@@ -8,5 +8,7 @@ data class Informationdata(
     val gender:String ?=null,
     val age:String ?=null,
     val completed:Int = 0,
-    val useruid:String ?=null
+    val useruid:String ?=null,
+    val disease:String,
+    val userimage:String ?=null
 )

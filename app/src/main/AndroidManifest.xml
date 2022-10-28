@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.humandisclass">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
-
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -16,12 +20,18 @@
         android:theme="@style/Theme.HumanDisClass"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.EditProfileActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.InfromationActivity"
-            android:windowSoftInputMode="adjustPan|adjustResize"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity
             android:name=".Activity.SigninActivity"
             android:exported="false" />
