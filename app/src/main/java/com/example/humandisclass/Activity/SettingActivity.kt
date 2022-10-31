@@ -13,6 +13,8 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.humandisclass.R
+import com.example.humandisclass.Util.getProgressDrawble
+import com.example.humandisclass.Util.loadImage
 import com.example.humandisclass.databinding.ActivitySettingBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -38,31 +40,8 @@ class SettingActivity : AppCompatActivity() {
             if (value!!.exists()){
                 val image  = value.getString("userimage")
                 img = image
-             //  Glide.with(this).load(image).into(profile_image)
-               // Picasso.get().load(image).into(profile_image)
-
-
-                Glide.with(this)
-                    .load(image)
-                    .listener(object : RequestListener<Drawable> {
-                        override fun onLoadFailed(
-                            e: GlideException?,
-                            model: Any?,
-                            target: Target<Drawable>?,
-                            isFirstResource: Boolean
-                        ): Boolean {
-                             return false
-                        }
-
-                        override fun onResourceReady(
-                            resource: Drawable?,
-                            model: Any?,
-                            target: Target<Drawable>?,
-                            dataSource: DataSource?,
-                            isFirstResource: Boolean
-                        ): Boolean {
-                            return false
-                        } }).into(profile_image)
+                val progressdialog = getProgressDrawble(this)
+                profile_image.loadImage(image,progressdialog)
                 setting_act_email.text = value.getString("email")
                 settings_phoneno_edittext.setText(value.getString("phoneno"))
                 setting_show_age_edittext.setText(value.getString("age"))

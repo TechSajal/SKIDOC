@@ -5,6 +5,42 @@
     android:layout_height="match_parent"
     tools:context=".Frament.SearchFragment">
 
-
+  <SearchView
+      android:id="@+id/search_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:queryHint="Enter Disease Name"
+      android:iconifiedByDefault="false"
+      android:queryBackground="@android:color/transparent"
+      android:background="@drawable/search_background"
+      android:layout_marginHorizontal="10dp"/>
+<FrameLayout
+    android:layout_below="@+id/search_view"
+    android:layout_margin="10dp"
+    android:id="@+id/frame_fragment_search"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <TextView
+      android:id="@+id/textview_no_data_found"
+      android:visibility="gone"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="No Data Found"
+      android:fontFamily="@font/varela_round"
+      android:textSize="20dp"
+      android:textColor="@color/black"
+      android:layout_gravity="center"
+      android:textStyle="bold"/>
+  <ProgressBar
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:id="@+id/progress_bar_search"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_view_search"/>
+</FrameLayout>
 
 </RelativeLayout>

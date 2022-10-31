@@ -17,7 +17,7 @@ import com.example.humandisclass.Util.loadImage
 
 class CommonSkinAlergyAdapter(val context: Context, var skindis:ArrayList<DiseaseData>):RecyclerView.Adapter<CommonSkinAlergyAdapter.MyViewHolder>() {
     @SuppressLint("NotifyDataSetChanged")
-    fun updateCountries(newdisease:List<DiseaseData>){
+    fun updatediseasemed2(newdisease:List<DiseaseData>){
         skindis.clear()
         skindis.addAll(newdisease)
         notifyDataSetChanged()

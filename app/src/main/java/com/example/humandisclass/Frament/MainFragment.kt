@@ -12,48 +12,43 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.humandisclass.Activity.Adapters.CommonDiseaseAdapter
 import com.example.humandisclass.Activity.Adapters.CommonSkinAlergyAdapter
-import com.example.humandisclass.Activity.Data.Commondis
 import com.example.humandisclass.R
-import com.example.humandisclass.ViewModel.ListViewModel
-import com.google.android.material.progressindicator.CircularProgressIndicator
+import com.example.humandisclass.ViewModel.Med2ViewModel
+import com.example.humandisclass.ViewModel.Med1ViewModel
 
 class MainFragment : Fragment() {
     private lateinit var recyclerViewCommonSkinDis: RecyclerView
-    private lateinit var adapter:CommonDiseaseAdapter
+    private lateinit var adaptermed1:CommonDiseaseAdapter
     private lateinit var recyclerviewCommonSkinAlergy:RecyclerView
-    private lateinit var aleradapter:CommonSkinAlergyAdapter
-    private lateinit var viewmodel:ListViewModel
+    private lateinit var adaptermed2:CommonSkinAlergyAdapter
+    private lateinit var viewmodelmed2:Med2ViewModel
+   private lateinit var viewmodelmed1:Med1ViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view  = inflater.inflate(R.layout.fragment_main, container, false)
-        viewmodel = ViewModelProviders.of(this)[ListViewModel::class.java]
-        viewmodel.refresh()
-        val disobject = mutableListOf(
-                     Commondis(R.drawable.acne,"Acne","Blocked skin follicles that lead to oil, bacteria and dead skin buildup in your pores."),
-                     Commondis(R.drawable.hairloss,"Alopecia Areata","Losing your hair in small patches."),
-                     Commondis(R.drawable.enzama,"Eczema","Dry, itchy skin that leads to swelling, cracking or scaliness."),
-                     Commondis(R.drawable.psoriasis,"Psoriasis","Scaly skin that may swell or feel hot."),
-                     Commondis(R.drawable.raynauds,"Raynaud's"," Periodic reduced blood flow to your fingers,causing numbness or skin color change."),
-                     Commondis(R.drawable.rosacea,"Rosacea"," Flushed, thick skin and pimples, usually on the face."),
-                     Commondis(R.drawable.vitiligo,"Vitiligo","Patches of skin that lose pigment.")
-         )
+        viewmodelmed2 = ViewModelProviders.of(this)[Med2ViewModel::class.java]
+        viewmodelmed2.refreshmed2()
+        viewmodelmed1 = ViewModelProviders.of(this)[Med1ViewModel::class.java]
+        viewmodelmed1.refreshmed1()
 
-        recyclerViewCommonSkinDis =view.findViewById(R.id.recyclerviewcommondisease)
-        recyclerViewCommonSkinDis.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        // first adapter
+        adaptermed1 = CommonDiseaseAdapter(requireContext(), arrayListOf())
+        recyclerViewCommonSkinDis =view.findViewById<RecyclerView?>(R.id.recyclerviewcommondisease)
+            .apply {
+                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                adapter = adaptermed1
+                setHasFixedSize(true)
+            }
+
         // LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
-        recyclerViewCommonSkinDis.setHasFixedSize(true)
-        adapter = CommonDiseaseAdapter(requireContext(),disobject)
-        recyclerViewCommonSkinDis.adapter = adapter
-
-
         //second adapter
-          aleradapter = CommonSkinAlergyAdapter(requireContext(), arrayListOf())
+          adaptermed2 = CommonSkinAlergyAdapter(requireContext(), arrayListOf())
           recyclerviewCommonSkinAlergy = view.findViewById<RecyclerView?>(R.id.recyclerview_common_skin_disease)
               .apply {
                   layoutManager = GridLayoutManager(context,2)
-                  adapter = aleradapter
+                  adapter = adaptermed2
                   setHasFixedSize(true)
               }
           observeviewmodel(view)
@@ -64,20 +59,37 @@ class MainFragment : Fragment() {
     }
 
     private fun observeviewmodel(view: View) {
-        viewmodel.diseases.observe(viewLifecycleOwner){ diseases ->
-                diseases?.let {
-                    view.findViewById<RecyclerView>(R.id.recyclerview_common_skin_disease).visibility =View.VISIBLE
-                    aleradapter.updateCountries(it) }
-
+        viewmodelmed1.diseases.observe(viewLifecycleOwner){ diseases ->
+            diseases?.let {
+                view.findViewById<RecyclerView>(R.id.recyclerviewcommondisease).visibility =View.VISIBLE
+                adaptermed1.updatediseasemed1(it)
+            }
         }
-        viewmodel.loading.observe(viewLifecycleOwner){ isloading ->
+        viewmodelmed1.loading.observe(viewLifecycleOwner){ isloading ->
             isloading?.let {
-                view.findViewById<ProgressBar>(R.id.progress_med2).visibility =if (it)View.VISIBLE else View.GONE
+                view.findViewById<ProgressBar>(R.id.progress_med1).visibility =if (it)View.VISIBLE else View.GONE
                 if (it){
-                    view.findViewById<RecyclerView>(R.id.recyclerview_common_skin_disease).visibility = View.GONE
+                    view.findViewById<RecyclerView>(R.id.recyclerviewcommondisease).visibility = View.GONE
                 }
             }
         }
+        viewmodelmed2.diseases.observe(viewLifecycleOwner){ diseases ->
+                diseases?.let {
+                    view.findViewById<RecyclerView>(R.id.recyclerview_common_skin_disease).visibility =View.VISIBLE
+                    adaptermed2.updatediseasemed2(it)
+                }
+
+        }
+        viewmodelmed2.loading.observe(viewLifecycleOwner){ isloading ->
+            isloading?.let {
+                view.findViewById<ProgressBar>(R.id.progress_med2).visibility =if (it)View.VISIBLE else View.GONE
+               if (it){
+                    view.findViewById<RecyclerView>(R.id.recyclerview_common_skin_disease).visibility = View.GONE
+                      }
+            }
+        }
+
+
 
     }
 

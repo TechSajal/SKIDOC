@@ -18,4 +18,11 @@ class DiseaseServices {
         return api.getDiseasemed2()
     }
 
+    fun getdiseasemed1():Single<List<DiseaseData>>{
+        return api.getDiseasemed1()
+    }
+
+    fun getalldisease():Single<List<DiseaseData>>{
+        return api.getalldisease()
+    }
 }

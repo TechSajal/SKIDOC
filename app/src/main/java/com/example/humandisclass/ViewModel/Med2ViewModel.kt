@@ -9,18 +9,17 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.rxjava3.observers.DisposableSingleObserver
 
-class ListViewModel:ViewModel(){
+class Med2ViewModel:ViewModel(){
     private val diseaseservice = DiseaseServices()
     private val disposable =CompositeDisposable()
     val diseases = MutableLiveData<List<DiseaseData>>()
     val diseaseloaderror = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
 
-    fun refresh(){
-        fetchDiseases()
+    fun refreshmed2(){
+        fetchDiseasemed2()
     }
-
-    private fun fetchDiseases() {
+    private fun fetchDiseasemed2() {
         loading.value = true
         disposable.add(
              diseaseservice.getdiseasemed2()

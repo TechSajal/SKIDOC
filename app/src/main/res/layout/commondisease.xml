@@ -3,15 +3,15 @@
     android:id="@+id/relativelayout_commondiseases"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="135dp"
-    android:layout_margin="5dp"
+    android:layout_width="130dp"
+    android:layout_margin="3dp"
     android:layout_height="wrap_content">
 
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/image_commondisease"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="110dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="3dp"
@@ -48,7 +48,7 @@
         android:layout_marginBottom="3dp"
         android:ellipsize="end"
         android:fontFamily="@font/varela_round"
-        android:maxLines="4"
+        android:maxLines="3"
         android:textAlignment="viewStart"
         android:textColor="#504D4D"
         android:textSize="10dp" />

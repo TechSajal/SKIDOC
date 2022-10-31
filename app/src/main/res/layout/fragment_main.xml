@@ -33,25 +33,36 @@
         android:textStyle="bold"
         android:layout_below="@+id/notfeeling"
         android:layout_marginStart="20dp"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerviewcommondisease"
+    <FrameLayout
+        android:id="@+id/framelayout_med1"
         android:layout_width="match_parent"
-        android:layout_height="215dp"
         android:layout_below="@+id/common"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
-        android:overScrollMode="never"
-        app:reverseLayout="true" />
+        android:layout_height="215dp">
+        <ProgressBar
+            android:id="@+id/progress_med1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:indicatorColor="@color/color_main"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewcommondisease"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#FFFFFF"
+            android:overScrollMode="never"
+            app:reverseLayout="true" />
+    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/add_scantodisease"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:layout_below="@+id/recyclerviewcommondisease"
+        android:layout_below="@+id/framelayout_med1"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/corner">
 
@@ -136,6 +147,7 @@
     <FrameLayout
         android:id="@+id/framelayout_med2"
         android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
         android:layout_height="match_parent"
         android:layout_below="@+id/common_skin_allergy">
 

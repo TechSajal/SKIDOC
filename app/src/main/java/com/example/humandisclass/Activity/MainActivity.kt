@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.scanFragment,null,options)
                 }
                 R.id.searchFragment -> {
-                    navController.navigate(R.id.scanFragment,null,options)
+                    navController.navigate(R.id.searchFragment,null,options)
                 }
             }
             true
