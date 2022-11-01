@@ -1,25 +1,14 @@
 package com.example.humandisclass.Activity
 
-import android.content.ContentValues.TAG
+
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.target.Target
-import com.example.humandisclass.R
 import com.example.humandisclass.Util.getProgressDrawble
 import com.example.humandisclass.Util.loadImage
 import com.example.humandisclass.databinding.ActivitySettingBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_edit_profile2.*
 import kotlinx.android.synthetic.main.activity_setting.*
 
 class SettingActivity : AppCompatActivity() {

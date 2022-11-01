@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.InformationActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_main">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/varela_round"
+            android:text="Information"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image_information"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/toolbar_information"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/sajal_scan"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/common" />
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/framelayout_information1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_below="@+id/image_information"-->
+<!--        android:layout_height="50dp">-->
+
+<!--        <FrameLayout-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="20dp">-->
+<!--            <TextView-->
+<!--                android:id="@+id/text_rating"-->
+<!--                android:textColor="#FFAB00"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="4.5"-->
+<!--                android:fontFamily="@font/varela_round"-->
+<!--                android:textStyle="bold"/>-->
+<!--            <ImageView-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:src="@drawable/ic_baseline_star_24"-->
+<!--                android:layout_marginLeft="20dp"/>-->
+<!--            -->
+<!--        </FrameLayout>-->
+<!--            -->
+<!--    </FrameLayout>-->
+
+    <TextView
+        android:id="@+id/disease_name_information"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/image_information"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/varela_round"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/view_information"
+        android:layout_width="30dp"
+        android:layout_height="3dp"
+        android:layout_below="@+id/disease_name_information"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/round_line_maincolor" />
+
+    <FrameLayout
+        android:id="@+id/framelayout_information_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_information"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/varela_round"
+            android:text="Discription"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/disc_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+           android:layout_marginEnd="10dp"
+            android:fontFamily="@font/varela_round"
+            android:text="Harlequin ichthyosis is a severe genetic disorder that affects the skin. Infants with this condition are born prematurely with very hard, thick skin covering most of their bodies. The skin forms large, diamond-shaped plates that are separated by deep cracks (fissures)."
+            android:textColor="@color/black" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_information_2"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/framelayout_information_2"
+        android:layout_marginTop="10dp"
+        android:background="#F0EDF4" />
+
+    <FrameLayout
+        android:id="@+id/frame_symptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_information_2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Symptoms"
+            android:fontFamily="@font/varela_round"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+        <FrameLayout
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/symptoms1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text=" Fragile skin that blisters easily,  Fragile skin that blisters easily, especially onespecially onFragile skin that blisters easily, especially on the palms and feet"
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/symptoms2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text=" Fragile skin that blisters easily, especially on Fragile skin that blisters easily, especially onFragile skin that blisters easily, especially on the palms and feet"
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="155dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/symptoms3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text=" Fragile skin that blisters easily, especially on Fragile skin that blisters easily, especially on Fragile skin that blisters easily, especially on the palms and feet"
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_information_3"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/frame_symptoms"
+        android:layout_marginTop="10dp"
+        android:background="#F0EDF4" />
+
+    <FrameLayout
+        android:id="@+id/frame_causes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_information_3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Causes"
+            android:fontFamily="@font/varela_round"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+        <FrameLayout
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/causes1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/causes2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="155dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/causes3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_information_4"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/frame_causes"
+        android:layout_marginTop="10dp"
+        android:background="#F0EDF4" />
+
+
+    <FrameLayout
+        android:id="@+id/frame_preventions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_information_4">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preventions"
+            android:fontFamily="@font/varela_round"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+        <FrameLayout
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/preventions1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/prevention2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="155dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/prevention3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_information_5"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/frame_preventions"
+        android:layout_marginTop="10dp"
+        android:background="#F0EDF4" />
+
+
+    <FrameLayout
+        android:id="@+id/frame_treatment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_information_5">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Treatments"
+            android:fontFamily="@font/varela_round"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+        <FrameLayout
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/treatment1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/treatment2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms  Air-conditioned rooms or other  Air-conditioned rooms or other  or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="155dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/treatment3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other Air-conditioned rooms or other  Air-conditioned rooms or other  cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_information_6"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/frame_treatment"
+        android:layout_marginTop="10dp"
+        android:background="#F0EDF4" />
+
+    <FrameLayout
+        android:id="@+id/frame_diagnosis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_information_6">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Diagnosis"
+            android:fontFamily="@font/varela_round"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+        <FrameLayout
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/diagnosis1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/diagnosis2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="155dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/check"/>
+
+            <TextView
+                android:id="@+id/diagnosis3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/varela_round"
+                android:layout_marginEnd="10dp"
+                android:text="Air-conditioned rooms or other cold spaces like the frozen food aisle in a grocery store."
+                android:textColor="@color/black"
+                android:layout_marginStart="25dp"
+                android:maxLines="3"/>
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_information_7"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/frame_diagnosis"
+        android:layout_marginTop="10dp"
+        android:background="#F0EDF4" />
+</RelativeLayout>
+</ScrollView>
