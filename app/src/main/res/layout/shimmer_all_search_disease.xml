@@ -13,7 +13,7 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="10dp"
         android:scaleType="fitXY"
-        android:src="@drawable/sajal_scan"
+        android:background="#BBBBBB"
         app:shapeAppearanceOverlay="@style/common" />
 
     <TextView
@@ -23,8 +23,8 @@
         android:layout_marginStart="105dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
+        android:background="#BBBBBB"
         android:fontFamily="@font/varela_round"
-        android:text="Acnge"
         android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -38,10 +38,10 @@
         android:layout_marginStart="105dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
+        android:background="#BBBBBB"
         android:ellipsize="end"
         android:fontFamily="@font/varela_round"
         android:maxLines="2"
-        android:text="Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells. It causes whiteheads, blackheads or pimples. Acne is most common among teenagers, though it affects people of all ages"
         android:textColor="@color/black"
         android:textSize="13dp" />
 
@@ -53,10 +53,10 @@
         android:layout_marginStart="105dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="20dp"
+        android:background="#BBBBBB"
         android:ellipsize="end"
         android:fontFamily="@font/varela_round"
         android:maxLines="1"
-        android:text="Excess oil (sebum) production"
         android:textColor="#2BD833"
         android:textSize="10dp" />
 </RelativeLayout>

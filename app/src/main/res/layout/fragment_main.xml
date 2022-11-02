@@ -38,13 +38,24 @@
         android:layout_width="match_parent"
         android:layout_below="@+id/common"
         android:layout_height="215dp">
-        <ProgressBar
-            android:id="@+id/progress_med1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:indicatorColor="@color/color_main"/>
-
+       <com.facebook.shimmer.ShimmerFrameLayout
+           android:id="@+id/shimmer_med1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:shimmer_repeat_mode="restart">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="10dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginEnd="10dp"
+               android:layout_marginBottom="10dp"
+               android:orientation="horizontal">
+               <include layout="@layout/simmer_commondisease"></include>
+               <include layout="@layout/simmer_commondisease"></include>
+               <include layout="@layout/simmer_commondisease"></include>
+           </LinearLayout>
+       </com.facebook.shimmer.ShimmerFrameLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerviewcommondisease"
             android:layout_width="match_parent"
@@ -147,9 +158,9 @@
     <FrameLayout
         android:id="@+id/framelayout_med2"
         android:layout_width="match_parent"
-        android:layout_marginTop="5dp"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/common_skin_allergy">
+        android:layout_height="580dp"
+        android:layout_below="@+id/common_skin_allergy"
+        android:layout_marginTop="5dp">
 
         <ProgressBar
             android:id="@+id/progress_med2"

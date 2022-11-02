@@ -15,6 +15,8 @@ import com.example.humandisclass.Activity.Adapters.CommonSkinAlergyAdapter
 import com.example.humandisclass.R
 import com.example.humandisclass.ViewModel.Med2ViewModel
 import com.example.humandisclass.ViewModel.Med1ViewModel
+import com.example.humandisclass.databinding.SimmerCommondiseaseBinding
+import com.facebook.shimmer.ShimmerFrameLayout
 
 class MainFragment : Fragment() {
     private lateinit var recyclerViewCommonSkinDis: RecyclerView
@@ -23,16 +25,17 @@ class MainFragment : Fragment() {
     private lateinit var adaptermed2:CommonSkinAlergyAdapter
     private lateinit var viewmodelmed2:Med2ViewModel
    private lateinit var viewmodelmed1:Med1ViewModel
+   private lateinit var shimmer1:ShimmerFrameLayout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view  = inflater.inflate(R.layout.fragment_main, container, false)
+        shimmer1 = view.findViewById(R.id.shimmer_med1)
         viewmodelmed2 = ViewModelProviders.of(this)[Med2ViewModel::class.java]
         viewmodelmed2.refreshmed2()
         viewmodelmed1 = ViewModelProviders.of(this)[Med1ViewModel::class.java]
         viewmodelmed1.refreshmed1()
-
         // first adapter
         adaptermed1 = CommonDiseaseAdapter(requireContext(), arrayListOf())
         recyclerViewCommonSkinDis =view.findViewById<RecyclerView?>(R.id.recyclerviewcommondisease)
@@ -61,15 +64,18 @@ class MainFragment : Fragment() {
     private fun observeviewmodel(view: View) {
         viewmodelmed1.diseases.observe(viewLifecycleOwner){ diseases ->
             diseases?.let {
+                shimmer1.stopShimmer()
                 view.findViewById<RecyclerView>(R.id.recyclerviewcommondisease).visibility =View.VISIBLE
                 adaptermed1.updatediseasemed1(it)
             }
         }
         viewmodelmed1.loading.observe(viewLifecycleOwner){ isloading ->
             isloading?.let {
-                view.findViewById<ProgressBar>(R.id.progress_med1).visibility =if (it)View.VISIBLE else View.GONE
+//                view.findViewById<ProgressBar>(R.id.progress_med1).visibility =if (it)View.VISIBLE else View.GONE
+                   shimmer1.startShimmer()
                 if (it){
                     view.findViewById<RecyclerView>(R.id.recyclerviewcommondisease).visibility = View.GONE
+
                 }
             }
         }

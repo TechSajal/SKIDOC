@@ -17,6 +17,7 @@ import com.example.humandisclass.Model.DiseaseApi
 import com.example.humandisclass.Model.DiseaseData
 import com.example.humandisclass.R
 import com.example.humandisclass.ViewModel.AllDiseaseViewModel
+import com.facebook.shimmer.ShimmerFrameLayout
 import io.reactivex.Single
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_search.view.*
@@ -29,11 +30,13 @@ class SearchFragment : Fragment() {
     private lateinit var adapteralldisease:All_Search_Adapter
     private lateinit var viewmodelalldisease:AllDiseaseViewModel
     private lateinit var tempsearchlist:ArrayList<DiseaseData>
+    private lateinit var shimmersearch:ShimmerFrameLayout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_search, container, false)
+        shimmersearch = view.findViewById(R.id.shimmer_search)
         viewmodelalldisease = ViewModelProviders.of(this)[AllDiseaseViewModel::class.java]
         viewmodelalldisease.refreshAll()
         tempsearchlist = ArrayList()
@@ -50,7 +53,7 @@ class SearchFragment : Fragment() {
     }
 
     private fun rearchview(view: View) {
-        view.search_view.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        view.search_view.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
               return false
             }
@@ -85,6 +88,7 @@ class SearchFragment : Fragment() {
     private fun observeviewmodel(view: View) {
         viewmodelalldisease.diseases.observe(viewLifecycleOwner){ diseases ->
             diseases?.let {
+                shimmersearch.stopShimmer()
                 view.findViewById<RecyclerView>(R.id.recycler_view_search).visibility =View.VISIBLE
                 adapteralldisease.updatealldisease(it)
                 tempsearchlist.addAll(it)
@@ -92,9 +96,18 @@ class SearchFragment : Fragment() {
         }
         viewmodelalldisease.loading.observe(viewLifecycleOwner){ isloading ->
             isloading?.let {
-                view.findViewById<ProgressBar>(R.id.progress_bar_search).visibility =if (it)View.VISIBLE else View.GONE
+//                  shimmersearch.startShimmer()
+////                view.findViewById<ProgressBar>(R.id.progress_bar_search).visibility =if (it)View.VISIBLE else View.GONE
+//                if (it){
+//                    view.findViewById<RecyclerView>(R.id.recycler_view_search).visibility = View.GONE
+//                }
                 if (it){
+                    shimmersearch.startShimmer()
                     view.findViewById<RecyclerView>(R.id.recycler_view_search).visibility = View.GONE
+                }else{
+                    shimmersearch.stopShimmer()
+                    shimmersearch.visibility = View.GONE
+                    view.findViewById<RecyclerView>(R.id.recycler_view_search).visibility = View.VISIBLE
                 }
             }
         }

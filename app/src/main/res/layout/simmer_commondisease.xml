@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/relativelayout_commondiseases"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="130dp"
+    android:layout_margin="3dp"
+    android:layout_height="wrap_content">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image_commondisease"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
+        android:scaleType="fitXY"
+        android:background="#BBBBBB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/customRoundedImageView" />
+
+    <TextView
+        android:id="@+id/commondis_name"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/image_commondisease"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:fontFamily="sans-serif-condensed"
+        android:maxLines="2"
+        android:background="#BBBBBB"
+        android:textAlignment="center"
+        android:textColor="#0C0C0C"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/disc_common_dis"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/commondis_name"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
+        android:ellipsize="end"
+        android:background="#BBBBBB"
+        android:fontFamily="@font/varela_round"
+        android:maxLines="3"
+        android:textAlignment="viewStart"
+        android:textColor="#504D4D"
+        android:textSize="10dp" />
+
+</RelativeLayout>

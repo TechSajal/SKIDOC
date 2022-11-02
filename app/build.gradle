@@ -9,7 +9,7 @@ android {
     compileSdk 33
     defaultConfig {
         applicationId "com.example.humandisclass"
-        minSdk 21
+        minSdk 28
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -51,6 +51,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore-ktx:24.4.0'
     implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.android.car.ui:car-ui-lib:+'
     annotationProcessor 'androidx.room:room-compiler:2.4.3'
     implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.2'
     testImplementation 'junit:junit:4.13.2'
@@ -95,4 +96,7 @@ dependencies {
     //lifecycle
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation "android.arch.lifecycle:viewmodel:1.1.1"
+
+    // simmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 }
