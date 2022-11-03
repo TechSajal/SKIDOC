@@ -28,19 +28,16 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/sajal_scan_2" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie_scan_animation"
-        android:layout_width="350dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/scan_text_1"
-        android:layout_centerHorizontal="true"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/scanner">
-
-
-    </com.airbnb.lottie.LottieAnimationView>
+<!--    <com.airbnb.lottie.LottieAnimationView-->
+<!--        android:id="@+id/lottie_scan_animation"-->
+<!--        android:layout_width="350dp"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_below="@id/scan_text_1"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        app:lottie_autoPlay="true"-->
+<!--        app:lottie_loop="true"-->
+<!--        app:lottie_rawRes="@raw/scanner"/>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/scan_with_camera"
@@ -71,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/scan_with_camera"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginHorizontal="30dp"
         android:clickable="true"
         app:startIconDrawable="@drawable/gallery_detection">
@@ -88,88 +85,82 @@
             android:focusable="false" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <FrameLayout
-        android:id="@+id/lottie_image_scan"
-        android:layout_width="250dp"
-        android:visibility="invisible"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_height="250dp"
-        android:background="@drawable/scan_corner">
-
-     <com.airbnb.lottie.LottieAnimationView
-         android:layout_width="220dp"
-         android:layout_height="220dp"
-         android:layout_gravity="center_horizontal"
-         android:layout_marginTop="5dp"
-         app:lottie_autoPlay="true"
-         app:lottie_loop="true"
-         app:lottie_rawRes="@raw/image_scan"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Scanning Image..."
-            android:textSize="16dp"
-            android:fontFamily="@font/varela_round"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_gravity="bottom|center_horizontal"/>
-    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/frame_layout_scan"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:visibility="visible"
-        android:layout_height="match_parent">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/image_scan_disease"
-            android:layout_width="match_parent"
-            android:scaleType="fitXY"
+            android:layout_width="350dp"
+            android:layout_height="400dp"
             android:background="@drawable/img2"
-            android:layout_height="match_parent"/>
+            android:scaleType="fitXY" />
     </FrameLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_scan_image"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:scaleType="fitXY"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/scanner" />
 
     <FrameLayout
         android:id="@+id/scan_final_click"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_width="350dp"
         android:layout_height="130dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/scan_corner">
-
+        android:layout_below="@+id/frame_layout_scan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/scan_corner"
+        android:visibility="visible">
+       <com.airbnb.lottie.LottieAnimationView
+           android:id="@+id/lottie_loading"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           app:lottie_autoPlay="true"
+           app:lottie_rawRes="@raw/loading3"
+           app:lottie_loop="true"
+           />
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/image_scan_final"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
             android:scaleType="fitXY"
-            android:src="@drawable/sajal_scan"
             app:shapeAppearanceOverlay="@style/common" />
+
         <TextView
             android:id="@+id/disease_name_scan_final"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alopecia Areata"
-            android:fontFamily="@font/varela_round"
-            android:textSize="20dp"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="120dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/disease_disc_scan_final"
             android:layout_width="200dp"
             android:layout_height="60dp"
-            android:maxLines="3"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="50dp"
             android:ellipsize="end"
             android:fontFamily="@font/varela_round"
-            android:textSize="16dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="120dp"
-            android:text="It is an itchy rash caused by direct contact with a substance or an allerginreraction It is an itchy rash caused by direct contact with a substance or an allerginreraction It is an itchy rash caused by direct contact with a substance or an allerginreraction It is an itchy rash caused by direct contact with a substance or an allerginreraction"/>
+            android:maxLines="3"
+             android:textColor="@color/white"
+            android:textSize="16dp" />
 
     </FrameLayout>
 </RelativeLayout>

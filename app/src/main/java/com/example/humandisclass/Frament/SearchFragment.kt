@@ -88,6 +88,7 @@ class SearchFragment : Fragment() {
     private fun observeviewmodel(view: View) {
         viewmodelalldisease.diseases.observe(viewLifecycleOwner){ diseases ->
             diseases?.let {
+                Toast.makeText(requireContext(),"${it[0].diseasename}",Toast.LENGTH_LONG).show()
                 view.findViewById<RecyclerView>(R.id.recycler_view_search).visibility =View.VISIBLE
                 adapteralldisease.updatealldisease(it)
                 tempsearchlist.addAll(it)

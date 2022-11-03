@@ -25,4 +25,8 @@ class DiseaseServices {
     fun getalldisease():Single<List<DiseaseData>>{
         return api.getalldisease()
     }
+
+    fun getnamedisease(namedis:String):Single<List<DiseaseData>>{
+        return api.getnamedisease(namedis)
+    }
 }

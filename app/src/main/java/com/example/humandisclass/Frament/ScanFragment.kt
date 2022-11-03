@@ -24,8 +24,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.PermissionChecker
 import androidx.core.content.PermissionChecker.checkSelfPermission
+import androidx.lifecycle.ViewModelProviders
+import com.airbnb.lottie.LottieAnimationView
 import com.example.humandisclass.Classifier
+
 import com.example.humandisclass.R
+import com.example.humandisclass.Util.getProgressDrawble
+import com.example.humandisclass.Util.loadImage
+import com.example.humandisclass.ViewModel.NameDiseaseViewModel
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_scan.*
@@ -38,10 +44,17 @@ class ScanFragment : Fragment() {
     private val PERMISSION_CODE = 321
     var classifier: Classifier? = null
     private var image_uri: Uri? = null
+    private lateinit var lottiescan:LottieAnimationView
+    private lateinit var lottiescanloading:LottieAnimationView
+    private lateinit var viewmodelnamedisease:NameDiseaseViewModel
     private lateinit var scanwithgallery:TextInputLayout
     private lateinit var scanwithcamera:TextInputLayout
     private lateinit var scanwithgalleryet:TextInputEditText
     private lateinit var scanwithcameraet:TextInputEditText
+    private lateinit var imagefinal:ImageView
+    private lateinit var namefinal:TextView
+    private lateinit var discfinal:TextView
+
     private var innerImage:ImageView?=null
     var resultTv: TextView? = null
     override fun onCreateView(
@@ -53,9 +66,16 @@ class ScanFragment : Fragment() {
         scanwithgalleryet = view.findViewById(R.id.scan_with_gallery_edittext)
         scanwithcamera = view.findViewById(R.id.scan_with_camera)
         scanwithgallery =view.findViewById(R.id.scan_with_gallery)
+        viewmodelnamedisease = ViewModelProviders.of(this)[NameDiseaseViewModel::class.java]
+        lottiescan = view.findViewById(R.id.lottie_scan_image)
+        lottiescanloading = view.findViewById(R.id.lottie_loading)
+        imagefinal = view.findViewById(R.id.image_scan_final)
+        namefinal =view.findViewById(R.id.disease_name_scan_final)
+        discfinal = view.findViewById(R.id.disease_disc_scan_final)
+
         view.scan_text_1.visibility = VISIBLE
         view.allergy_image.visibility = VISIBLE
-        view.lottie_scan_animation.visibility = VISIBLE
+       // view.lottie_scan_animation.visibility = VISIBLE
         view.frame_layout_scan.visibility = GONE
         view.scan_final_click.visibility = GONE
         scanwithcamera.visibility = VISIBLE
@@ -142,7 +162,7 @@ class ScanFragment : Fragment() {
     private fun doInference() {
         requireView().scan_text_1.visibility = GONE
         requireView().allergy_image.visibility = GONE
-        requireView().lottie_scan_animation.visibility = GONE
+     //   requireView().lottie_scan_animation.visibility = GONE
         scanwithcamera.visibility = GONE
         scanwithgallery.visibility = GONE
         requireView().frame_layout_scan.visibility = VISIBLE
@@ -152,6 +172,37 @@ class ScanFragment : Fragment() {
         val res = classifier?.recognizeImage(rotated!!)
         resultTv?.text = ""
         for(r in res!!){
+            viewmodelnamedisease.refreshAll(r.title)
+            viewmodelnamedisease.diseases.observe(viewLifecycleOwner){diseases ->
+                diseases?.let {
+                    val progressdialog = getProgressDrawble(requireContext())
+                      imagefinal.loadImage(it[0].image,progressdialog)
+                      namefinal.text = it[0].diseasename
+                      discfinal.text = it[0].discription
+                }
+            }
+            viewmodelnamedisease.loading.observe(viewLifecycleOwner){loading ->
+                loading?.let {
+                    if (it){
+                        imagefinal.visibility = GONE
+                        namefinal.visibility =  GONE
+                        discfinal.visibility = GONE
+                        lottiescanloading.visibility = VISIBLE
+                        lottiescanloading.playAnimation()
+                        lottiescan.visibility = VISIBLE
+                        lottiescan.playAnimation()
+                    }else{
+                        imagefinal.visibility = VISIBLE
+                        namefinal.visibility =  VISIBLE
+                        discfinal.visibility = VISIBLE
+                        lottiescanloading.cancelAnimation()
+                        lottiescanloading.visibility = GONE
+                        lottiescan.cancelAnimation()
+                        lottiescan.visibility = GONE
+
+                    }
+                }
+            }
             resultTv?.append(r.title)
         }
     }
