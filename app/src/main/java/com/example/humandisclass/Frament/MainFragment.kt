@@ -26,12 +26,14 @@ class MainFragment : Fragment() {
     private lateinit var viewmodelmed2:Med2ViewModel
    private lateinit var viewmodelmed1:Med1ViewModel
    private lateinit var shimmer1:ShimmerFrameLayout
+    private lateinit var shimmer2:ShimmerFrameLayout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view  = inflater.inflate(R.layout.fragment_main, container, false)
         shimmer1 = view.findViewById(R.id.shimmer_med1)
+        shimmer2 = view.findViewById(R.id.shimmer_med2)
         viewmodelmed2 = ViewModelProviders.of(this)[Med2ViewModel::class.java]
         viewmodelmed2.refreshmed2()
         viewmodelmed1 = ViewModelProviders.of(this)[Med1ViewModel::class.java]
@@ -88,10 +90,13 @@ class MainFragment : Fragment() {
         }
         viewmodelmed2.loading.observe(viewLifecycleOwner){ isloading ->
             isloading?.let {
-                view.findViewById<ProgressBar>(R.id.progress_med2).visibility =if (it)View.VISIBLE else View.GONE
                if (it){
                     view.findViewById<RecyclerView>(R.id.recyclerview_common_skin_disease).visibility = View.GONE
-                      }
+                     shimmer2.startShimmer()
+                      }else{
+                             shimmer2.stopShimmer()
+                             shimmer2.visibility = View.GONE
+               }
             }
         }
 

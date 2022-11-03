@@ -146,28 +146,48 @@
         android:id="@+id/common_skin_allergy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/add_scantodisease"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-condensed"
         android:text="Common skin allergy"
         android:textColor="@color/black"
-        android:fontFamily="sans-serif-condensed"
         android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/add_scantodisease"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="20dp"/>
+        android:textStyle="bold" />
 
     <FrameLayout
         android:id="@+id/framelayout_med2"
         android:layout_width="match_parent"
-        android:layout_height="580dp"
+        android:layout_height="600dp"
         android:layout_below="@+id/common_skin_allergy"
         android:layout_marginTop="5dp">
 
-        <ProgressBar
-            android:id="@+id/progress_med2"
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_med2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:indicatorColor="@color/color_main" />
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:shimmer_repeat_mode="restart">
+            <LinearLayout
+                android:id="@+id/shimmer_med2_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include layout="@layout/shimmer_commonskinalergy"></include>
+                <include layout="@layout/shimmer_commonskinalergy"></include>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="285dp"
+                android:orientation="horizontal">
+                <include layout="@layout/shimmer_commonskinalergy"></include>
+                <include layout="@layout/shimmer_commonskinalergy"></include>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_common_skin_disease"

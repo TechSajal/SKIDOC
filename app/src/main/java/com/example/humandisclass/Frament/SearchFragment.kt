@@ -88,7 +88,6 @@ class SearchFragment : Fragment() {
     private fun observeviewmodel(view: View) {
         viewmodelalldisease.diseases.observe(viewLifecycleOwner){ diseases ->
             diseases?.let {
-                shimmersearch.stopShimmer()
                 view.findViewById<RecyclerView>(R.id.recycler_view_search).visibility =View.VISIBLE
                 adapteralldisease.updatealldisease(it)
                 tempsearchlist.addAll(it)
@@ -96,11 +95,6 @@ class SearchFragment : Fragment() {
         }
         viewmodelalldisease.loading.observe(viewLifecycleOwner){ isloading ->
             isloading?.let {
-//                  shimmersearch.startShimmer()
-////                view.findViewById<ProgressBar>(R.id.progress_bar_search).visibility =if (it)View.VISIBLE else View.GONE
-//                if (it){
-//                    view.findViewById<RecyclerView>(R.id.recycler_view_search).visibility = View.GONE
-//                }
                 if (it){
                     shimmersearch.startShimmer()
                     view.findViewById<RecyclerView>(R.id.recycler_view_search).visibility = View.GONE

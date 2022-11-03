@@ -13,6 +13,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
+        android:background="#BBBBBB"
         android:scaleType="fitXY"
         app:shapeAppearanceOverlay="@style/common_skin_alergy_rountimage" />
 
@@ -23,6 +24,7 @@
         android:layout_below="@+id/image_common_skin_alergy"
         android:layout_marginHorizontal="5dp"
         android:layout_marginBottom="3dp"
+        android:background="#BBBBBB"
         android:fontFamily="@font/varela_round"
         android:textColor="@color/black"
         android:textSize="15dp"
@@ -35,6 +37,7 @@
         android:layout_below="@+id/text_common_skin_alergy_name"
         android:layout_marginHorizontal="5dp"
         android:layout_marginBottom="3dp"
+        android:background="#BBBBBB"
         android:ellipsize="end"
         android:fontFamily="@font/varela_round"
         android:maxLines="3"
@@ -48,6 +51,7 @@
         android:layout_below="@+id/disc_common_skin_alergy"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
+        android:background="#BBBBBB"
         android:layout_marginBottom="5dp"
         android:ellipsize="end"
         android:fontFamily="@font/varela_round"
