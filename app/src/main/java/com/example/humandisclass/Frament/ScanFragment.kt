@@ -20,12 +20,14 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.PermissionChecker
 import androidx.core.content.PermissionChecker.checkSelfPermission
 import androidx.lifecycle.ViewModelProviders
 import com.airbnb.lottie.LottieAnimationView
+import com.example.humandisclass.Activity.InformationActivity
 import com.example.humandisclass.Classifier
 
 import com.example.humandisclass.R
@@ -44,6 +46,7 @@ class ScanFragment : Fragment() {
     private val PERMISSION_CODE = 321
     var classifier: Classifier? = null
     private var image_uri: Uri? = null
+    private lateinit var scanfinalclick:FrameLayout
     private lateinit var lottiescan:LottieAnimationView
     private lateinit var lottiescanloading:LottieAnimationView
     private lateinit var viewmodelnamedisease:NameDiseaseViewModel
@@ -62,6 +65,7 @@ class ScanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
          val view = inflater.inflate(R.layout.fragment_scan, container, false)
+        scanfinalclick = view.findViewById(R.id.scan_final_click)
         scanwithcameraet= view.findViewById(R.id.scan_with_camera_edittext)
         scanwithgalleryet = view.findViewById(R.id.scan_with_gallery_edittext)
         scanwithcamera = view.findViewById(R.id.scan_with_camera)
@@ -179,6 +183,29 @@ class ScanFragment : Fragment() {
                       imagefinal.loadImage(it[0].image,progressdialog)
                       namefinal.text = it[0].diseasename
                       discfinal.text = it[0].discription
+                      val curitem = it[0]
+                    scanfinalclick.setOnClickListener {
+                        var i  = Intent(context, InformationActivity::class.java)
+                        i.putExtra("name",curitem.diseasename)
+                        i.putExtra("description",curitem.discription)
+                        i.putExtra("image",curitem.image)
+                        i.putExtra("causes1",curitem.causes1)
+                        i.putExtra("causes2",curitem.causes2)
+                        i.putExtra("causes3",curitem.causes3)
+                        i.putExtra("symptions1",curitem.symptoms1)
+                        i.putExtra("symptions2",curitem.symptom2)
+                        i.putExtra("symptions3",curitem.symptom3)
+                        i.putExtra("diagnosis1",curitem.diagnosis1)
+                        i.putExtra("diagnosis2",curitem.diagnosis2)
+                        i.putExtra("diagnosis3",curitem.diagnosis3)
+                        i.putExtra("preventions1",curitem.preventions1)
+                        i.putExtra("preventions2",curitem.preventions2)
+                        i.putExtra("preventions3",curitem.preventions3)
+                        i.putExtra("treatment1",curitem.treatment1)
+                        i.putExtra("treatment2",curitem.treatment2)
+                        i.putExtra("treatment3",curitem.treatment3)
+                        requireContext().startActivity(i)
+                    }
                 }
             }
             viewmodelnamedisease.loading.observe(viewLifecycleOwner){loading ->
