@@ -12,17 +12,23 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.humandisclass.Activity.Adapters.CommonDiseaseAdapter
 import com.example.humandisclass.Activity.Adapters.CommonSkinAlergyAdapter
+import com.example.humandisclass.Activity.Adapters.GetComment
+import com.example.humandisclass.Activity.Data.getadvice
 import com.example.humandisclass.R
 import com.example.humandisclass.ViewModel.Med2ViewModel
 import com.example.humandisclass.ViewModel.Med1ViewModel
-import com.example.humandisclass.databinding.SimmerCommondiseaseBinding
+//import com.example.humandisclass.databinding.SimmerCommondiseaseBinding
 import com.facebook.shimmer.ShimmerFrameLayout
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.toObject
 
 class MainFragment : Fragment() {
     private lateinit var recyclerViewCommonSkinDis: RecyclerView
     private lateinit var adaptermed1:CommonDiseaseAdapter
     private lateinit var recyclerviewCommonSkinAlergy:RecyclerView
     private lateinit var adaptermed2:CommonSkinAlergyAdapter
+    private lateinit var recyclerviewcommentdisease:RecyclerView
+    private lateinit var adaptetcomment1:GetComment
     private lateinit var viewmodelmed2:Med2ViewModel
    private lateinit var viewmodelmed1:Med1ViewModel
    private lateinit var shimmer1:ShimmerFrameLayout
@@ -57,8 +63,25 @@ class MainFragment : Fragment() {
                   setHasFixedSize(true)
               }
           observeviewmodel(view)
+       //third adapter
+        adaptetcomment1 = GetComment(requireContext(), arrayListOf())
+        recyclerviewcommentdisease = view.findViewById<RecyclerView?>(R.id.recycler_view_get_advice)
+            .apply {
+                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                adapter = adaptetcomment1
+                setHasFixedSize(true)
+            }
+        val mfirestore = FirebaseFirestore.getInstance()
+        mfirestore.collection("comments").get()
+            .addOnSuccessListener { document ->
+                val lists:ArrayList<getadvice> = ArrayList()
+                for(i in document.documents){
+                    val product =i.toObject(getadvice::class.java)
+                    lists.add(product!!)
 
-
+                }
+                adaptetcomment1.updatediseasemed1(lists)
+            }
 
        return  view
     }

@@ -74,7 +74,7 @@
 
     <TextView
         android:id="@+id/disease_name_information"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="30dp"
         android:layout_below="@+id/image_information"
         android:layout_marginStart="10dp"
@@ -83,6 +83,35 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/image_information"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/botton">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/varela_round"
+            android:text="See Comment"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_arror_write_white" />
+
+
+    </FrameLayout>
 
     <View
         android:id="@+id/view_information"
@@ -116,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="30dp"
-           android:layout_marginEnd="10dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="@font/varela_round"
             android:text="Harlequin ichthyosis is a severe genetic disorder that affects the skin. Infants with this condition are born prematurely with very hard, thick skin covering most of their bodies. The skin forms large, diamond-shaped plates that are separated by deep cracks (fissures)."
             android:textColor="@color/black" />
@@ -163,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/varela_round"
                 android:layout_marginEnd="10dp"
-                android:text=" Fragile skin that blisters easily,  Fragile skin that blisters easily, especially onespecially onFragile skin that blisters easily, especially on the palms and feet"
+                android:text=" in that , especially onespecially onFragile skin that blisters easily, especially on the palms and feet"
                 android:textColor="@color/black"
                 android:layout_marginStart="25dp"
                 android:maxLines="3"/>
