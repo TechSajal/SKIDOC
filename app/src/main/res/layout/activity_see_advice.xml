@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SeeAdviceActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_toolbar_see_advice"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_main">
+
+        <ImageView
+            android:id="@+id/back_act_see_adv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="60dp"
+            android:fontFamily="@font/varela_round"
+            android:gravity="center_vertical"
+            android:text="See people advice"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/delete_advice"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/trash" />
+
+    </FrameLayout>
+
+      <de.hdodenhof.circleimageview.CircleImageView
+          android:id="@+id/commentimage_seeadvice"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:layout_below="@+id/frame_toolbar_see_advice"
+          android:layout_marginStart="20dp"
+          android:layout_marginTop="10dp"
+          android:src="@color/black" />
+
+      <TextView
+          android:id="@+id/commentname_seeadvice"
+          android:layout_width="match_parent"
+          android:layout_height="28dp"
+          android:layout_below="@+id/frame_toolbar_see_advice"
+          android:layout_marginStart="80dp"
+          android:layout_marginTop="10dp"
+          android:fontFamily="@font/varela_round"
+          android:text="Sajal Kaushal"
+          android:textColor="@color/black"
+          android:textSize="20dp"
+          android:textStyle="bold" />
+    <FrameLayout
+        android:id="@+id/frame_comment_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_below="@+id/commentname_seeadvice">
+        <TextView
+            android:id="@+id/commonyear_seeadvice"
+            android:layout_width="70dp"
+            android:layout_height="23dp"
+            android:fontFamily="@font/varela_round"
+            android:text="111 year"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/disease_seeadvice"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:text="Acne"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_marginStart="72dp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/commentdisname_seeadvice"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/commentimage_seeadvice"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/varela_round"
+        android:text="Harlequin ichthyosis"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+
+    <View
+    android:id="@+id/view_information_see_advice"
+    android:layout_width="60dp"
+    android:layout_height="3dp"
+    android:layout_below="@+id/commentdisname_seeadvice"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="2dp"
+    android:background="@drawable/round_line_maincolor" />
+
+      <ScrollView
+          android:id="@+id/scrollview_seeadvice"
+          android:layout_width="match_parent"
+          android:layout_height="350dp"
+          android:layout_below="@+id/view_information_see_advice"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          android:scrollbars="none">
+
+          <TextView
+              android:id="@+id/commentdisdisc_seeadvice"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="5dp"
+              android:layout_marginEnd="10dp"
+              android:fontFamily="@font/varela_round"
+              android:text="ic diarlequin is a svrlequin is a severe genetic disoHarlequin is a severe genetic disoHarlequin is a severe genetic disodisorder that affects the skin. Infants with this ichthyosis is is a severe genetic disorder that affects the skin. Infants with this  a severe genetic disorder that affects the skin. Infants with this condition are born prematurely with very hard, thick skin covering most of their bodies. The skin forms large, diamond-shaped plates that are separated by deep cracks (fissures)."
+              android:textColor="@color/black"
+              android:textSize="20dp" />
+      </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/add_scantodisease_seeadvice"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/corner">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/doctor_skin_2" />
+
+            <TextView
+                android:id="@+id/scan_skin_disease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/varela_round"
+                android:text="Scan skin diseases and"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/scan_skin_disease_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scan_skin_disease"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/varela_round"
+                android:text="get information"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_check_circle"
+                android:layout_below="@+id/scan_skin_disease_2"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"/>
+
+            <TextView
+                android:id="@+id/more_than_50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="More than 50+ disease classified"
+                android:textColor="@color/white"
+                android:fontFamily="@font/varela_round"
+                android:textSize="10dp"
+                android:layout_below="@id/scan_skin_disease_2"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="43dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Get started"
+                android:backgroundTint="#275DD9"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/more_than_50"/>
+        </RelativeLayout>
+    </FrameLayout>
+
+
+</RelativeLayout>

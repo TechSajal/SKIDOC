@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AddAdviceActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_main">
+
+        <ImageView
+            android:id="@+id/back_act_add_adv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="60dp"
+            android:fontFamily="@font/varela_round"
+            android:gravity="center_vertical"
+            android:text="Add your advice"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_advice_disease_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frame_toolbar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Disease"
+        android:overScrollMode="never"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@color/design_default_color_error">
+
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/add_advice_autocomplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/varela_round"
+        android:inputType="none"
+        android:overScrollMode="never"
+        android:scrollbars="vertical"
+        android:textColor="@color/color_main"
+        android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_user_advice"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_advice_disease_name"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"
+        android:hint="Advice"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@android:color/holo_red_dark">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_user_advice_edittext2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/varela_round"
+            android:inputType="textMultiLine"
+            android:lines="12"
+            android:gravity="top"
+            android:overScrollMode="always"
+            android:scrollbars="none"
+            android:scrollbarStyle="insideInset"
+            android:scrollHorizontally="false"
+            android:textColor="@color/color_main"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/text_genuine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Plz enter genuine advice only"
+        android:textColor="@color/black"
+        android:fontFamily="@font/varela_round"
+        android:layout_below="@+id/add_user_advice"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"/>
+    <FrameLayout
+        android:id="@+id/submitadvice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/text_genuine"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/outline_blue">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/varela_round"
+        android:text="Submit advice"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+    </FrameLayout>
+</RelativeLayout>
