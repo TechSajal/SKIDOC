@@ -3,6 +3,7 @@
     android:layout_width="250dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
+    android:id="@+id/relative_layout_comment"
     android:background="@drawable/outline"
     android:layout_height="wrap_content">
 
@@ -42,7 +43,7 @@
         android:textSize="12dp" />
 
     <TextView
-        android:id="@+id/person_disease"
+        android:id="@+id/disease_seeadvice"
         android:layout_width="120dp"
         android:layout_height="20dp"
         android:text="Acne"

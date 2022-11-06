@@ -1,10 +1,13 @@
 package com.example.humandisclass.Frament
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ProgressBar
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -13,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.humandisclass.Activity.Adapters.CommonDiseaseAdapter
 import com.example.humandisclass.Activity.Adapters.CommonSkinAlergyAdapter
 import com.example.humandisclass.Activity.Adapters.GetComment
+import com.example.humandisclass.Activity.AddAdviceActivity
 import com.example.humandisclass.Activity.Data.getadvice
 import com.example.humandisclass.R
 import com.example.humandisclass.ViewModel.Med2ViewModel
@@ -33,6 +37,7 @@ class MainFragment : Fragment() {
    private lateinit var viewmodelmed1:Med1ViewModel
    private lateinit var shimmer1:ShimmerFrameLayout
     private lateinit var shimmer2:ShimmerFrameLayout
+    private lateinit var addyouradvice:FrameLayout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +49,12 @@ class MainFragment : Fragment() {
         viewmodelmed2.refreshmed2()
         viewmodelmed1 = ViewModelProviders.of(this)[Med1ViewModel::class.java]
         viewmodelmed1.refreshmed1()
+        addyouradvice = view.findViewById(R.id.addyouradvice)
+        //add your advice onclick
+        addyouradvice.setOnClickListener {
+            val i = Intent(context,AddAdviceActivity::class.java)
+            requireContext().startActivity(i)
+        }
         // first adapter
         adaptermed1 = CommonDiseaseAdapter(requireContext(), arrayListOf())
         recyclerViewCommonSkinDis =view.findViewById<RecyclerView?>(R.id.recyclerviewcommondisease)
@@ -53,7 +64,6 @@ class MainFragment : Fragment() {
                 setHasFixedSize(true)
             }
 
-        // LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
         //second adapter
           adaptermed2 = CommonSkinAlergyAdapter(requireContext(), arrayListOf())
           recyclerviewCommonSkinAlergy = view.findViewById<RecyclerView?>(R.id.recyclerview_common_skin_disease)
@@ -77,8 +87,8 @@ class MainFragment : Fragment() {
                 val lists:ArrayList<getadvice> = ArrayList()
                 for(i in document.documents){
                     val product =i.toObject(getadvice::class.java)
-                    lists.add(product!!)
-
+                    product!!.id = i.id
+                    lists.add(product)
                 }
                 adaptetcomment1.updatediseasemed1(lists)
             }
@@ -96,7 +106,6 @@ class MainFragment : Fragment() {
         }
         viewmodelmed1.loading.observe(viewLifecycleOwner){ isloading ->
             isloading?.let {
-//                view.findViewById<ProgressBar>(R.id.progress_med1).visibility =if (it)View.VISIBLE else View.GONE
                    shimmer1.startShimmer()
                 if (it){
                     view.findViewById<RecyclerView>(R.id.recyclerviewcommondisease).visibility = View.GONE
@@ -126,5 +135,4 @@ class MainFragment : Fragment() {
 
 
     }
-
 }

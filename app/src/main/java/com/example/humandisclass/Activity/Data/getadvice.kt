@@ -7,4 +7,6 @@ data class getadvice(
     val disease:String ?=null,
     val dis_name:String?=null,
     val dis_disc:String?=null,
+    val uid:String?=null,
+    var id:String?=null
 )

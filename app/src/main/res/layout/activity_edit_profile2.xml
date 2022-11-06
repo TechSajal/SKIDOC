@@ -235,24 +235,24 @@
         android:layout_below="@+id/edit_profile_gender2"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Disease"
+        android:overScrollMode="never"
         app:helperTextEnabled="true"
         app:helperTextTextColor="@color/design_default_color_error"
-        android:layout_marginEnd="10dp"
-        app:startIconDrawable="@drawable/ic_blood"
-        android:overScrollMode="never"
-        android:hint="Disease">
+        app:startIconDrawable="@drawable/ic_blood">
 
         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
             android:id="@+id/edit_profile_disease2_autocomplete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/varela_round"
+            android:inputType="none"
             android:overScrollMode="never"
             android:scrollbars="vertical"
             android:textColor="@color/color_main"
-            android:textStyle="bold"
-            android:fontFamily="@font/varela_round"
-            android:inputType="none"/>
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton

@@ -2,6 +2,7 @@ package com.example.humandisclass.Activity.Adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +11,10 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.humandisclass.Activity.Data.getadvice
-import com.example.humandisclass.Model.DiseaseData
+import com.example.humandisclass.Activity.SeeAdviceActivity
 import com.example.humandisclass.R
 import com.example.humandisclass.Util.getProgressDrawble
 import com.example.humandisclass.Util.loadImage
-import org.w3c.dom.Text
 
 class GetComment(val context: Context, var adv:ArrayList<getadvice>):RecyclerView.Adapter<GetComment.MyViewHolder>() {
     @SuppressLint("NotifyDataSetChanged")
@@ -37,6 +37,18 @@ class GetComment(val context: Context, var adv:ArrayList<getadvice>):RecyclerVie
         holder.persondisease.text = curitem.disease
         holder.disease.text = curitem.dis_name
         holder.dis_disc.text =curitem.dis_disc
+        holder.rv.setOnClickListener {
+            val i= Intent(context, SeeAdviceActivity::class.java)
+            i.putExtra("image",curitem.image)
+            i.putExtra("name",curitem.name)
+            i.putExtra("age",curitem.age)
+            i.putExtra("disease",curitem.disease)
+            i.putExtra("dis_name",curitem.dis_name)
+            i.putExtra("dis_disc",curitem.dis_disc)
+            i.putExtra("uid",curitem.uid)
+            i.putExtra("id",curitem.id)
+            context.startActivity(i)
+        }
 
     }
 
@@ -49,8 +61,9 @@ class GetComment(val context: Context, var adv:ArrayList<getadvice>):RecyclerVie
         val image:ImageView = itemView.findViewById(R.id.commentimage)
         val name:TextView = itemView.findViewById(R.id.commentname)
         val age:TextView = itemView.findViewById(R.id.commonyear)
-        val persondisease:TextView = itemView.findViewById(R.id.person_disease)
+        val persondisease:TextView = itemView.findViewById(R.id.disease_seeadvice)
         val disease:TextView = itemView.findViewById(R.id.commentdisname)
         val dis_disc:TextView = itemView.findViewById(R.id.commentdisdisc)
+        val rv:RelativeLayout =itemView.findViewById(R.id.relative_layout_comment)
     }
 }
