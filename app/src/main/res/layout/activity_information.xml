@@ -85,6 +85,7 @@
         android:textStyle="bold" />
 
     <FrameLayout
+        android:id="@+id/seeadvice"
         android:layout_width="140dp"
         android:layout_height="30dp"
         android:layout_below="@+id/image_information"
@@ -97,9 +98,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:fontFamily="@font/varela_round"
-            android:text="See Comment"
+            android:text="See Advice"
             android:textColor="@color/white"
             android:textStyle="bold" />
 

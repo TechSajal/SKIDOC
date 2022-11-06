@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/bottom30dp.xml" value="0.119" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/bottom_nav_colors.xml" value="0.1" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/botton.xml" value="0.2285" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/botton_2.xml" value="0.244" />
@@ -17,7 +18,10 @@
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_right_while.xml" value="0.2455" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_settings_white.xml" value="0.182" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/outline.xml" value="0.244" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/outline10dp.xml" value="0.2475" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/outline30dp.xml" value="0.2475" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/outline_blue.xml" value="0.2555" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/outline_common.xml" value="0.136" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/round_line.xml" value="0.2285" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/round_line_maincolor.xml" value="0.2555" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/saj.xml" value="0.2555" />
@@ -33,12 +37,13 @@
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_login.xml" value="0.536" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_main2.xml" value="0.21829710144927536" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_name_disease_advice.xml" value="0.4" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_see_advice.xml" value="0.264" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_setting.xml" value="0.2572463768115942" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_signin.xml" value="0.2359375" />
-        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/all_search_disease.xml" value="0.264" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/all_search_disease.xml" value="0.536" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/comment.xml" value="0.4" />
-        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/commondisease.xml" value="0.4" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/commondisease.xml" value="0.6" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/commonskinalergy.xml" value="0.264" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/corner.xml" value="0.205859375" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/dropdown_gender.xml" value="0.23777173913043478" />
@@ -52,6 +57,8 @@
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/item.xml" value="0.1" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/layout_comment.xml" value="0.264" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/main1.xml" value="0.176" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/name.xml" value="0.24094202898550723" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/name_disease_advice.xml" value="0.4" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/shimmer_all_search_disease.xml" value="0.264" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/shimmer_commonskinalergy.xml" value="0.22871376811594202" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/shimmer_name_disease.xml" value="0.24895833333333334" />

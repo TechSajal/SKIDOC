@@ -1,9 +1,11 @@
 package com.example.humandisclass.Activity
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.humandisclass.R
@@ -31,6 +33,7 @@ class InformationActivity : AppCompatActivity() {
     private lateinit var disdia1:TextView
     private lateinit var disdia2:TextView
     private lateinit var disdia3:TextView
+    private lateinit var seeadvicebut:FrameLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
@@ -52,7 +55,7 @@ class InformationActivity : AppCompatActivity() {
         disdia1 = findViewById(R.id.diagnosis1)
         disdia2 = findViewById(R.id.diagnosis2)
         disdia3 = findViewById(R.id.diagnosis3)
-
+        seeadvicebut = findViewById(R.id.seeadvice)
         val i =intent
         val progressdialog = getProgressDrawble(this)
         val image:String = i.getStringExtra("image").toString()
@@ -73,6 +76,11 @@ class InformationActivity : AppCompatActivity() {
         val diagnosis1:String = i.getStringExtra("diagnosis1").toString()
         val diagnosis2:String = i.getStringExtra("diagnosis2").toString()
         val diagnosis3:String = i.getStringExtra("diagnosis3").toString()
+        seeadvicebut.setOnClickListener {
+            val i = Intent(this,NameDiseaseAdvice::class.java)
+              i.putExtra("disname",name)
+            this.startActivity(i)
+        }
         disname.text = name
         disimage.loadImage(image,progressdialog)
         disdisc.text = disc
