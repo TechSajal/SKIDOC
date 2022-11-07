@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:id="@+id/relative_layout_name_disease_advice"
+    android:background="@drawable/outline30dp"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/name_disease_advice_image"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@color/black" />
+
+    <TextView
+        android:id="@+id/name_disease_advice_name"
+        android:layout_width="130dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/varela_round"
+        android:text="Sajal Kaushal"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <FrameLayout
+        android:id="@+id/name_disease_advice_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_below="@+id/name_disease_advice_name">
+        <TextView
+            android:id="@+id/name_disease_advice_year"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/commentname"
+            android:fontFamily="@font/varela_round"
+            android:text="11 year"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/disease_name_disease_advice"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:text="Acne"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_below="@+id/commentname"
+            android:layout_marginStart="53dp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/disname_name_disease_advice"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_below="@+id/name_disease_advice_image"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/varela_round"
+        android:text="Harlequin ichthyosis"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/name_disease_advice_disdisc"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@+id/disname_name_disease_advice"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/varela_round"
+        android:maxLines="7"
+        android:text="Harlequin is a severe genetic disorder that affects the skin. Infants with this ichthyosis is is a severe genetic disorder that affects the skin. Infants with this  a severe genetic disorder that affects the skin. Infants with this condition are born prematurely with very hard, thick skin covering most of their bodies. The skin forms large, diamond-shaped plates that are separated by deep cracks (fissures)."
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/name_disease_advice_disdisc"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bottom30dp">
+
+    </FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.NameDiseaseAdvice">
+
+    <FrameLayout
+        android:id="@+id/frame_toolbar_name_disease_advice"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_main">
+
+        <ImageView
+            android:id="@+id/back_act_name_disease_advice"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="60dp"
+            android:fontFamily="@font/varela_round"
+            android:gravity="center_vertical"
+            android:text="See advice"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/frame_noadvice"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unfortunately there  is no advice of that disease"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/addyouradvice_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add your advice"
+            android:textAlignment="center"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_marginTop="22dp"/>
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_name_disease_advice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/frame_toolbar_name_disease_advice"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="3dp"
+        android:background="#FFFFFF"
+        android:overScrollMode="never"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>
