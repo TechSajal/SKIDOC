@@ -51,14 +51,19 @@ class SigninActivity : AppCompatActivity() {
                         if(it.isSuccessful){
                             val userprofilesignindata = Informationdata(email,"","","","","",0,FirebaseAuth.getInstance().currentUser!!.uid,"No","https://firebasestorage.googleapis.com/v0/b/skidoc-efa6f.appspot.com/o/DummyProfileImage.png?alt=media&token=94419938-344e-4631-b4f8-86db0410b1ab")
                             db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).set(userprofilesignindata).addOnCompleteListener {
-                                val intent = Intent(this,InfromationActivity::class.java)
-                                startActivity(intent)
-                            }.addOnFailureListener {
-                                    Toast.makeText(this,it.toString(),Toast.LENGTH_LONG).show()
+                                 firebaseauth.currentUser?.sendEmailVerification()!!.addOnSuccessListener {
+                                     val intent = Intent(this,EmailVarificationActivity::class.java)
+                                                   this.startActivity(intent)
+                                 }
+                                     .addOnFailureListener { it1 ->
+                                         Toast.makeText(this,it1.toString(),Toast.LENGTH_LONG).show()
+                                     }
+                            }.addOnFailureListener { it2 ->
+                                Toast.makeText(this,it2.toString(),Toast.LENGTH_LONG).show()
                             }
 
                         }else{
-                            Toast.makeText(this,it.exception.toString(),Toast.LENGTH_LONG).show()
+                            Toast.makeText(this,it.toString(),Toast.LENGTH_LONG).show()
                         }
                     }
                 }else{

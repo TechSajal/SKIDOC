@@ -8,6 +8,7 @@
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/botton.xml" value="0.2285" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/botton_2.xml" value="0.244" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/corner.xml" value="0.1" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/emailverifybutton.xml" value="0.2475" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_age.xml" value="0.193" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_arrow_back.xml" value="0.193" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/drawable/ic_baseline_image_search_24.xml" value="0.1" />
@@ -31,6 +32,7 @@
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_add_advice.xml" value="0.2" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_edit_profile.xml" value="0.2572463768115942" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_edit_profile2.xml" value="0.264" />
+        <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_email_varification.xml" value="0.264" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_information.xml" value="0.28933092224231466" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_infromation.xml" value="0.2" />
         <entry key="..\:/Users/sajal/AndroidStudioProjects/HumanDisClass/app/src/main/res/layout/activity_landing.xml" value="0.2572463768115942" />

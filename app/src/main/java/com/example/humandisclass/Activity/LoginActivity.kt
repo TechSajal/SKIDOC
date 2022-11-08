@@ -51,11 +51,13 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this,"Plz fill all the fields",Toast.LENGTH_LONG).show()
             }else{
                firebaseauth.signInWithEmailAndPassword(email,pass).addOnCompleteListener {
-                   if(it.isSuccessful){
+                    val isverify = firebaseauth.currentUser?.isEmailVerified
+                   if(isverify == true){
                       val intent = Intent(this,MainActivity::class.java)
                        startActivity(intent)
                    }else{
-                       Toast.makeText(this,it.exception.toString(),Toast.LENGTH_LONG).show()
+                       val intent = Intent(this,EmailVarificationActivity::class.java)
+                       this.startActivity(intent)
                    }
                }
             }

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f3f8"
+    tools:context=".Activity.EmailVarificationActivity">
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/emailverifybutton">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_emailvarification"
+            app:shapeAppearanceOverlay="@style/emailverify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/emailverification3" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/varela_round"
+            android:text="Verify Your Email Address"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="210dp"
+            android:fontFamily="@font/varela_round"
+            android:text="Welcome to SKIDOC"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="235dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/varela_round"
+            android:text="Plz click on the link that has been send to you on email and then click the button"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/emailverified"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Email Verified"
+            android:fontFamily="@font/varela_round"
+            android:background="@drawable/emailverifybutton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="280dp"/>
+
+        <TextView
+            android:id="@+id/resendverificationlink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resend Verification Link"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/black"
+            android:layout_marginTop="340dp"
+            android:textSize="12dp"
+            android:textAlignment="center"/>
+
+    </FrameLayout>
+</RelativeLayout>
