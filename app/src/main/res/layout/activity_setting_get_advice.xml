@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SettingGetAdvice">
+
+    <FrameLayout
+        android:id="@+id/frame_toolbar_settinggetadvice"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_main">
+
+        <ImageView
+            android:id="@+id/back_settinggetadvice"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_arrow_back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="60dp"
+            android:fontFamily="@font/varela_round"
+            android:gravity="center_vertical"
+            android:text="Your Advice"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/deleteall_settingyouradvice"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/trash" />
+
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/frame_settinggetadvice"
+         android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unfortunately You have not given any advice"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/addyouradvice_settinggetadvice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add your advice"
+            android:textAlignment="center"
+            android:fontFamily="@font/varela_round"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_marginTop="22dp"/>
+    </FrameLayout>
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycler_view_settinggetadvices"
+    android:layout_below="@+id/frame_toolbar_settinggetadvice"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+</RelativeLayout>

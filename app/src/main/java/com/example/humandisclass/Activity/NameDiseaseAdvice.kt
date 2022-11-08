@@ -20,7 +20,6 @@ class NameDiseaseAdvice : AppCompatActivity() {
     private lateinit var adapternameadvice: NameDiseaseAdviceAdapter
     private lateinit var frameLayoutnoadvice: FrameLayout
     private lateinit var addyouradvice:TextView
-    val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
     val db = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

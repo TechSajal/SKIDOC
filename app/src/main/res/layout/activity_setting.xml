@@ -237,7 +237,7 @@
 
 
   <RelativeLayout
-      android:id="@+id/relativelayout_botton"
+      android:id="@+id/relativelayout_settingyouradvice"
       android:layout_width="350dp"
       android:layout_height="50dp"
       android:layout_below="@+id/setting_skin_disease"
@@ -251,7 +251,7 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="30dp"
         android:fontFamily="@font/varela_round"
-        android:text="History"
+        android:text="Your Advice"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -269,9 +269,9 @@
       android:id="@+id/logout"
       android:layout_width="300dp"
       android:layout_height="50dp"
-      android:layout_below="@+id/relativelayout_botton"
-      android:layout_alignStart="@+id/relativelayout_botton"
-      android:layout_alignEnd="@+id/relativelayout_botton"
+      android:layout_below="@+id/relativelayout_settingyouradvice"
+      android:layout_alignStart="@+id/relativelayout_settingyouradvice"
+      android:layout_alignEnd="@+id/relativelayout_settingyouradvice"
       android:layout_marginTop="20dp"
       android:layout_marginBottom="30dp"
       android:background="@drawable/botton"

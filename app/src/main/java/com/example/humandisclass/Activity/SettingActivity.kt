@@ -40,5 +40,10 @@ class SettingActivity : AppCompatActivity() {
                 setting_act_name.text = value.getString("fullname")
             }
         }
+
+        relativelayout_settingyouradvice.setOnClickListener {
+            val i=Intent(this,SettingGetAdvice::class.java)
+            this.startActivity(i)
+        }
     }
 }
