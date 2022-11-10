@@ -12,27 +12,35 @@
     android:layout_height="match_parent"
     tools:context=".Frament.MainFragment">
 
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/patient" />
+
     <TextView
         android:id="@+id/notfeeling"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Not feeling too well"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/common"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/notfeeling"
+        android:layout_marginStart="70dp"
+        android:fontFamily="sans-serif-condensed"
         android:text="Cure it with common symptoms"
         android:textSize="16dp"
-        android:fontFamily="sans-serif-condensed"
-        android:textStyle="bold"
-        android:layout_below="@+id/notfeeling"
-        android:layout_marginStart="20dp"/>
+        android:textStyle="bold" />
     <FrameLayout
         android:id="@+id/framelayout_med1"
         android:layout_width="match_parent"
@@ -131,23 +139,33 @@
             android:layout_marginTop="18dp"
             android:layout_marginStart="43dp"/>
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:text="Get started"
-            android:backgroundTint="#275DD9"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/more_than_50"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/getstartedbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_below="@+id/more_than_50"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#275DD9"
+                android:text="Get started" />
         </RelativeLayout>
     </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageskinallergy"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/add_scantodisease"
+        android:background="@drawable/skinallergy" />
 
     <TextView
         android:id="@+id/common_skin_allergy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/add_scantodisease"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="15dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Common skin allergy"
@@ -159,8 +177,7 @@
         android:id="@+id/framelayout_med2"
         android:layout_width="match_parent"
         android:layout_height="600dp"
-        android:layout_below="@+id/common_skin_allergy"
-        android:layout_marginTop="5dp">
+        android:layout_below="@+id/imageskinallergy">
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmer_med2"

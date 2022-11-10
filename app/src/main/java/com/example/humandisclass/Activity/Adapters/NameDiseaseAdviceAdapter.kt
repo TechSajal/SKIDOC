@@ -40,6 +40,7 @@ class NameDiseaseAdviceAdapter(val context: Context,val data:ArrayList<getadvice
         holder.dis_disc.text = curitem.dis_disc
         holder.rv.setOnClickListener {
             val i= Intent(context, SeeAdviceActivity::class.java)
+            i.putExtra("place",2)
             i.putExtra("image",curitem.image)
             i.putExtra("name",curitem.name)
             i.putExtra("age",curitem.age)

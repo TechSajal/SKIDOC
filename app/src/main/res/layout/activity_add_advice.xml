@@ -17,7 +17,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:background="@drawable/ic_arrow_back_white" />
 
         <TextView
@@ -114,8 +114,26 @@
         android:layout_gravity="center"
         android:fontFamily="@font/varela_round"
         android:text="Submit advice"
-        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="20dp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_addadvice"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/emailverifybutton"
+        android:visibility="visible">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_addadvice"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/advice"
+            app:lottie_speed="3" />
     </FrameLayout>
 </RelativeLayout>

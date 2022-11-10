@@ -22,7 +22,9 @@ class SettingActivity : AppCompatActivity() {
             val intent = Intent(this,EditProfileActivity2::class.java)
             startActivity(intent)
         }
-
+        back_setting.setOnClickListener {
+            onBackPressed()
+        }
         val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
         val db = FirebaseFirestore.getInstance()
         db.collection("users").document(currentuserid).addSnapshotListener(this,){value,error->
@@ -43,7 +45,15 @@ class SettingActivity : AppCompatActivity() {
 
         relativelayout_settingyouradvice.setOnClickListener {
             val i=Intent(this,SettingGetAdvice::class.java)
+            i.putExtra("place",1)
             this.startActivity(i)
         }
+
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        finish()
+        startActivity(intent)
     }
 }

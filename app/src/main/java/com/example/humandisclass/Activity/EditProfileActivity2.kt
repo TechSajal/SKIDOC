@@ -36,6 +36,10 @@ class EditProfileActivity2 : AppCompatActivity() {
         binding = ActivityEditProfile2Binding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        frame_uploading.visibility =View.GONE
+        back_editprofile.setOnClickListener {
+            onBackPressed()
+        }
         val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
         val db = FirebaseFirestore.getInstance()
         BindingInfromationActivity().BloodGroupEditSettingbinding(binding)
@@ -78,22 +82,13 @@ class EditProfileActivity2 : AppCompatActivity() {
             edit_profile_age2.helperText = BindingInfromationActivity().validageEditSetting(binding)
             edit_profile_bloodgroup2.helperText = BindingInfromationActivity().validBloodGroupSettingsphoneno(binding)
             edit_profile_gender2.helperText = BindingInfromationActivity().validgenderEditSetting(binding)
-           if (edit_profile_name2.helperText!=null && edit_profile_phonene2.helperText!=null &&
-               edit_profile_email2.helperText !=null && edit_profile_age2.helperText!=null &&
-               edit_profile_bloodgroup2.helperText!=null && edit_profile_gender2.helperText!=null ||
-               TextUtils.isEmpty(edit_profile_disease2_autocomplete.text)
+           if (edit_profile_phonene2.helperText==null && edit_profile_email2.helperText ==null && edit_profile_age2.helperText==null && edit_profile_bloodgroup2.helperText==null && edit_profile_gender2.helperText==null
              ){
-               val snackbar = Snackbar.make(it, "Please Fill all the field", Snackbar.LENGTH_LONG)
-               val sbView: View = snackbar.view
-               sbView.setBackgroundColor(resources.getColor(R.color.design_default_color_error))
-               snackbar.show()
-           }else{
                val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
                val db = FirebaseFirestore.getInstance()
                if (filepath !=null){
-                   val pd = ProgressDialog(this)
-                   pd.setTitle("Uploading")
-                   pd.show()
+                   frame_uploading.visibility =View.VISIBLE
+                   lottie_uploading.playAnimation()
                    val imageref = FirebaseStorage.getInstance().reference.child("product/" +System.currentTimeMillis() + "productpic.jpg" )
                    imageref.putFile(filepath!!)
                        .addOnSuccessListener {
@@ -111,27 +106,27 @@ class EditProfileActivity2 : AppCompatActivity() {
                                )
                                db.collection("users").document(currentuserid).update(map)
                                    .addOnSuccessListener {
-                                       pd.dismiss()
+                                       frame_uploading.visibility =View.GONE
+                                       lottie_uploading.cancelAnimation()
                                        Toast.makeText(this,"Updated",Toast.LENGTH_LONG).show()
+                                        finish()
+
                                    }
                                    .addOnFailureListener {
-                                       pd.dismiss()
+                                       frame_uploading.visibility =View.GONE
+                                       lottie_uploading.cancelAnimation()
                                        Toast.makeText(this,"Could not update plz try again later",Toast.LENGTH_LONG).show()
                                    }
                            }
                        }
                        .addOnFailureListener{
-                           pd.dismiss()
+                           frame_uploading.visibility =View.GONE
+                           lottie_uploading.cancelAnimation()
                            Toast.makeText(this,"Could not update plz try again later",Toast.LENGTH_LONG).show()
                        }
-                       .addOnProgressListener { p0 ->
-                           val progress =(100.0 * p0.bytesTransferred)/p0.totalByteCount
-                           pd.setMessage("Updated ${progress.toInt()}%")
-                       }
                }else{
-                   val pd = ProgressDialog(this)
-                   pd.setTitle("Uploading")
-                   pd.show()
+                   frame_uploading.visibility =View.VISIBLE
+                   lottie_uploading.playAnimation()
                    val map = mapOf(
                        "fullname" to  edit_profile_name_edittext2.text.toString(),
                        "phoneno" to edit_profile_phonene_edittext2.text.toString(),
@@ -144,16 +139,24 @@ class EditProfileActivity2 : AppCompatActivity() {
 
                    db.collection("users").document(currentuserid).update(map)
                        .addOnSuccessListener {
-                           pd.dismiss()
+                           frame_uploading.visibility =View.GONE
+                           lottie_uploading.cancelAnimation()
                            Toast.makeText(this,"Updated",Toast.LENGTH_LONG).show()
+                           finish()
                        }
                        .addOnFailureListener {
-                           pd.dismiss()
+                           frame_uploading.visibility =View.GONE
+                           lottie_uploading.cancelAnimation()
                            Toast.makeText(this,"Could not update plz try again later",Toast.LENGTH_LONG).show()
                        }
 
                }
 
+           }else{
+               val snackbar = Snackbar.make(it, "Plz see all the field", Snackbar.LENGTH_LONG)
+               val sbView: View = snackbar.view
+               sbView.setBackgroundColor(resources.getColor(R.color.design_default_color_error))
+               snackbar.show()
            }
         }
 

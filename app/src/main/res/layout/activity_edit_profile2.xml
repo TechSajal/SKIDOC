@@ -19,6 +19,7 @@
         android:layout_marginTop="10dp">
 
         <ImageView
+            android:id="@+id/back_editprofile"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
@@ -268,5 +269,24 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:textStyle="bold"/>
+
+    <FrameLayout
+        android:id="@+id/frame_uploading"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/emailverifybutton"
+        android:visibility="visible">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_uploading"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/uploading2"
+            app:lottie_speed="2"/>
+    </FrameLayout>
 </RelativeLayout>
 </ScrollView>

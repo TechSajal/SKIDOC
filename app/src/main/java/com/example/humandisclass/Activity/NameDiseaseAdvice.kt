@@ -1,10 +1,12 @@
 package com.example.humandisclass.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +15,7 @@ import com.example.humandisclass.Activity.Data.getadvice
 import com.example.humandisclass.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import org.checkerframework.common.returnsreceiver.qual.This
 import org.w3c.dom.Text
 
 class NameDiseaseAdvice : AppCompatActivity() {
@@ -20,12 +23,22 @@ class NameDiseaseAdvice : AppCompatActivity() {
     private lateinit var adapternameadvice: NameDiseaseAdviceAdapter
     private lateinit var frameLayoutnoadvice: FrameLayout
     private lateinit var addyouradvice:TextView
+    private lateinit var back:ImageView
     val db = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_name_disease_advice)
         frameLayoutnoadvice = findViewById(R.id.frame_noadvice)
         addyouradvice = findViewById(R.id.addyouradvice_text)
+        addyouradvice.setOnClickListener {
+            val i = Intent(this,AddAdviceActivity::class.java)
+            startActivity(i)
+        }
+        back = findViewById(R.id.back_act_name_disease_advice)
+        back.setOnClickListener {
+            onBackPressed()
+        }
+
         frameLayoutnoadvice.visibility =View.GONE
         adapternameadvice = NameDiseaseAdviceAdapter(this, arrayListOf())
         recyclerViewnameAdvice = findViewById<RecyclerView?>(R.id.recycler_view_name_disease_advice)

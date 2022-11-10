@@ -12,8 +12,7 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:src="@color/black" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:id="@+id/commentname"
@@ -22,7 +21,6 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/varela_round"
-        android:text="Sajal Kaushal"
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="bold" />
@@ -38,7 +36,6 @@
         android:layout_height="20dp"
         android:layout_below="@+id/commentname"
         android:fontFamily="@font/varela_round"
-        android:text="11 year"
         android:textColor="@color/black"
         android:textSize="12dp" />
 
@@ -46,7 +43,6 @@
         android:id="@+id/disease_seeadvice"
         android:layout_width="120dp"
         android:layout_height="20dp"
-        android:text="Acne"
         android:fontFamily="@font/varela_round"
         android:textColor="@color/black"
         android:textSize="12dp"
@@ -62,7 +58,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/varela_round"
-        android:text="Harlequin ichthyosis"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
@@ -72,13 +67,12 @@
         android:layout_height="130dp"
         android:layout_below="@+id/commentdisname"
         android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:ellipsize="end"
         android:fontFamily="@font/varela_round"
         android:maxLines="7"
-        android:text="Harlequin is a severe genetic disorder that affects the skin. Infants with this ichthyosis is is a severe genetic disorder that affects the skin. Infants with this  a severe genetic disorder that affects the skin. Infants with this condition are born prematurely with very hard, thick skin covering most of their bodies. The skin forms large, diamond-shaped plates that are separated by deep cracks (fissures)."
         android:textColor="@color/black"
         android:textSize="14dp" />
 

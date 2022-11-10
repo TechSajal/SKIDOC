@@ -34,6 +34,7 @@ class InformationActivity : AppCompatActivity() {
     private lateinit var disdia2:TextView
     private lateinit var disdia3:TextView
     private lateinit var seeadvicebut:FrameLayout
+    private lateinit var back:ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
@@ -56,6 +57,10 @@ class InformationActivity : AppCompatActivity() {
         disdia2 = findViewById(R.id.diagnosis2)
         disdia3 = findViewById(R.id.diagnosis3)
         seeadvicebut = findViewById(R.id.seeadvice)
+        back = findViewById(R.id.back_information_disease)
+        back.setOnClickListener {
+            onBackPressed()
+        }
         val i =intent
         val progressdialog = getProgressDrawble(this)
         val image:String = i.getStringExtra("image").toString()

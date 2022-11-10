@@ -17,6 +17,31 @@
         <item>Others</item>
     </string-array>
 
+    <string-array name="SkinDiseaseconfirm">
+        <item>Acne</item>
+        <item>Actinic Prurigo</item>
+        <item>Alopecia Areata</item>
+        <item>Angioedema</item>
+        <item>Argyria</item>
+        <item>Atopic Dermatitis</item>
+        <item>Bullous</item>
+        <item>Chromhidrosis</item>
+        <item>Chronic Hives</item>
+        <item>Contact Dermatitis</item>
+        <item>Eczema</item>
+        <item>Epidermolysis Bullosa</item>
+        <item>Harlequin Ichthyosis</item>
+        <item>Lamellar Ichthyosis</item>
+        <item>Nail Fungus</item>
+        <item>Necrobiosis Lipoidica</item>
+        <item>Psoriasis</item>
+        <item>Raynauds</item>
+        <item>Rosacea</item>
+        <item>Skin Cancer</item>
+        <item>Urticaria Hives</item>
+        <item>Vascular Tumor</item>
+        <item>Vitiligo</item>
+    </string-array>
 
     <string-array name="SkinDisease">
         <item>No</item>
@@ -31,5 +56,4 @@
         <item>Contact dermatitis</item>
     </string-array>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -55,6 +55,7 @@ class LoginActivity : AppCompatActivity() {
                    if(isverify == true){
                       val intent = Intent(this,MainActivity::class.java)
                        startActivity(intent)
+                        finish()
                    }else{
                        val intent = Intent(this,EmailVarificationActivity::class.java)
                        this.startActivity(intent)

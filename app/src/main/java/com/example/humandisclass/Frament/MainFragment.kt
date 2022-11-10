@@ -2,13 +2,11 @@ package com.example.humandisclass.Frament
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import android.widget.ProgressBar
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,13 +16,14 @@ import com.example.humandisclass.Activity.Adapters.CommonSkinAlergyAdapter
 import com.example.humandisclass.Activity.Adapters.GetComment
 import com.example.humandisclass.Activity.AddAdviceActivity
 import com.example.humandisclass.Activity.Data.getadvice
+import com.example.humandisclass.Activity.MainActivity
 import com.example.humandisclass.R
 import com.example.humandisclass.ViewModel.Med2ViewModel
 import com.example.humandisclass.ViewModel.Med1ViewModel
 //import com.example.humandisclass.databinding.SimmerCommondiseaseBinding
 import com.facebook.shimmer.ShimmerFrameLayout
+import com.google.android.material.button.MaterialButton
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.toObject
 
 class MainFragment : Fragment() {
     private lateinit var recyclerViewCommonSkinDis: RecyclerView
@@ -38,6 +37,8 @@ class MainFragment : Fragment() {
    private lateinit var shimmer1:ShimmerFrameLayout
     private lateinit var shimmer2:ShimmerFrameLayout
     private lateinit var addyouradvice:FrameLayout
+    private lateinit var banner:FrameLayout
+    private lateinit var getstarted:MaterialButton
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,6 +50,18 @@ class MainFragment : Fragment() {
         viewmodelmed2.refreshmed2()
         viewmodelmed1 = ViewModelProviders.of(this)[Med1ViewModel::class.java]
         viewmodelmed1.refreshmed1()
+        banner = view.findViewById(R.id.add_scantodisease)
+        banner.setOnClickListener {
+            val i =Intent(context,MainActivity::class.java)
+             i.putExtra("place",2)
+            requireContext().startActivity(i)
+        }
+        getstarted = view.findViewById(R.id.getstartedbutton)
+        getstarted.setOnClickListener {
+            val i =Intent(context,MainActivity::class.java)
+            i.putExtra("place",2)
+            requireContext().startActivity(i)
+        }
         addyouradvice = view.findViewById(R.id.addyouradvice)
         //add your advice onclick
         addyouradvice.setOnClickListener {

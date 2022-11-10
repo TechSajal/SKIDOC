@@ -105,10 +105,10 @@
         android:id="@+id/lottie_scan_image"
         android:layout_width="350dp"
         android:layout_height="400dp"
-        android:visibility="invisible"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:scaleType="fitXY"
+        android:visibility="invisible"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/scanner" />

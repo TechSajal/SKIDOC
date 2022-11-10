@@ -268,7 +268,9 @@ class ScanFragment : Fragment() {
             input.height,
             rotationMatrix,
             true
+
         )
     }
+
 
 }
