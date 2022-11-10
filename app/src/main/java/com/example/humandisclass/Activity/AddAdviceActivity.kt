@@ -1,5 +1,6 @@
 package com.example.humandisclass.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,10 +21,13 @@ class AddAdviceActivity : AppCompatActivity() {
         binding = ActivityAddAdviceBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        frame_addadvice.visibility = View.GONE
         submitadvice.setOnClickListener {
             if (add_advice_autocomplete.text.isNullOrEmpty() || add_user_advice_edittext2.text.isNullOrEmpty()){
                 Toast.makeText(this,"Please fill all the details",Toast.LENGTH_LONG).show()
             }else{
+                frame_addadvice.visibility =View.VISIBLE
+                lottie_addadvice.playAnimation()
                 val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
                 val db = FirebaseFirestore.getInstance()
                 db.collection("users").document(currentuserid).get().addOnSuccessListener {document ->
@@ -39,7 +43,12 @@ class AddAdviceActivity : AppCompatActivity() {
                     )
                     db.collection("comments").add(data).addOnSuccessListener { document ->
                         db.collection("comments").document(document.id).update(mapOf("id" to document.id)).addOnSuccessListener {
-                            Toast.makeText(this,"Advice submitted",Toast.LENGTH_LONG).show()
+                            frame_addadvice.visibility =View.GONE
+                            lottie_addadvice.visibility =View.GONE
+                            val i= Intent(this,MainActivity::class.java)
+                                i.putExtra("place",1)
+                               startActivity(i)
+                               finish()
                         }.addOnFailureListener {
                                 Toast.makeText(this,"WDWFWF",Toast.LENGTH_LONG).show()
                             }

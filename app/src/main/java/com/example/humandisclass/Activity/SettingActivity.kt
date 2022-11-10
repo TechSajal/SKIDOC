@@ -45,5 +45,12 @@ class SettingActivity : AppCompatActivity() {
             val i=Intent(this,SettingGetAdvice::class.java)
             this.startActivity(i)
         }
+
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        finish()
+        startActivity(intent)
     }
 }

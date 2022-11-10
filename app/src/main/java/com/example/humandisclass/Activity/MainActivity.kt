@@ -50,6 +50,11 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemReselectedListener
         }
 
+        val i = intent.getIntExtra("place",0)
+        if (i==1){
+            navController.navigate(R.id.mainFragment,null,options)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -6,9 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.airbnb.lottie.LottieAnimationView
 import com.example.humandisclass.Frament.MainFragment
 import com.example.humandisclass.R
 import com.example.humandisclass.Util.getProgressDrawble
@@ -24,6 +27,8 @@ class SeeAdviceActivity : AppCompatActivity() {
     private lateinit var adv_dis:TextView
     private lateinit var adv_disc:TextView
     private lateinit var delete:ImageView
+    private lateinit var fraamedelete:FrameLayout
+    private lateinit var lottiedelete:LottieAnimationView
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +40,9 @@ class SeeAdviceActivity : AppCompatActivity() {
         adv_dis = findViewById(R.id.commentdisname_seeadvice)
         adv_disc = findViewById(R.id.commentdisdisc_seeadvice)
         delete = findViewById(R.id.delete_advice)
+        fraamedelete = findViewById(R.id.frame_delete_seeadvice)
+        lottiedelete = findViewById(R.id.lottie_delete_seeadvice)
+        fraamedelete.visibility =View.GONE
         val progressdialog = getProgressDrawble(this)
         image.loadImage(intent.getStringExtra("image"),progressdialog)
         name.text = intent.getStringExtra("name")
@@ -48,18 +56,42 @@ class SeeAdviceActivity : AppCompatActivity() {
         val uid =intent.getStringExtra("uid")
         val id =intent.getStringExtra("id")
         if (uid.equals(currentuserid)){
-            delete.visibility = View.VISIBLE
+            if(intent.getIntExtra("place",0)==2){
+                delete.visibility =View.GONE
+            }else{
+                delete.visibility = View.VISIBLE
+            }
         }else{
             delete.visibility =View.GONE
         }
          delete.setOnClickListener {
-             db.collection("comments").document(id.toString()).delete().addOnSuccessListener {
-                 Toast.makeText(this,"Advice deleted",Toast.LENGTH_LONG).show()
-
-             }
-                 .addOnFailureListener {
-                     Toast.makeText(this,"Plz try again later",Toast.LENGTH_LONG).show()
+             val builder = AlertDialog.Builder(this)
+             builder.setTitle("Delete")
+             builder.setMessage("Are you sure you want to delete the product")
+             builder.setIcon(R.drawable.ic_delete)
+             builder.setPositiveButton("Yes"){ dialoginterface, _ ->
+                 fraamedelete.visibility =View.VISIBLE
+                 lottiedelete.playAnimation()
+                 db.collection("comments").document(id.toString()).delete().addOnSuccessListener {
+                     val i=Intent(this,MainActivity::class.java)
+                     i.putExtra("place",1)
+                     lottiedelete.cancelAnimation()
+                     fraamedelete.visibility = View.GONE
+                     startActivity(i)
+                     finish()
+                 }.addOnFailureListener{
+                     Toast.makeText(this,"Could not delete plz try again later",Toast.LENGTH_LONG).show()
+                     lottiedelete.cancelAnimation()
+                     fraamedelete.visibility = View.GONE
                  }
+                 dialoginterface.dismiss()
+                 }
+             builder.setNegativeButton("No"){ dialoginterface, _ ->
+                 dialoginterface.dismiss()
+             }
+             val alertDialog: AlertDialog = builder.create()
+             alertDialog.setCancelable(false)
+             alertDialog.show()
          }
 
 
