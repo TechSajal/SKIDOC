@@ -157,4 +157,23 @@
         android:layout_centerHorizontal="true"
         android:backgroundTint="#747473"
         android:layout_height="60dp"/>
+
+    <FrameLayout
+        android:id="@+id/frame_signin_load"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/emailverifybutton"
+        android:visibility="visible">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_signin_load"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/signin"
+            app:lottie_speed="3" />
+    </FrameLayout>
 </RelativeLayout>

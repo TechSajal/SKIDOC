@@ -5,23 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import android.widget.SearchView
-import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.humandisclass.Activity.Adapters.All_Search_Adapter
-import com.example.humandisclass.Model.DiseaseApi
+import com.example.humandisclass.Adapters.All_Search_Adapter
 import com.example.humandisclass.Model.DiseaseData
 import com.example.humandisclass.R
 import com.example.humandisclass.ViewModel.AllDiseaseViewModel
 import com.facebook.shimmer.ShimmerFrameLayout
-import io.reactivex.Single
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_search.view.*
-import retrofit2.http.GET
 import java.util.*
 import kotlin.collections.ArrayList
 

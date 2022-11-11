@@ -4,17 +4,17 @@ import android.content.Intent
 import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import com.example.humandisclass.Activity.Data.Informationdata
-import com.example.humandisclass.Activity.Helper.BindingSigninActivity
+import com.example.humandisclass.Data.Informationdata
+import com.example.humandisclass.Helper.BindingSigninActivity
 import com.example.humandisclass.R
 import com.example.humandisclass.databinding.ActivitySigninBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.SetOptions
+import kotlinx.android.synthetic.main.activity_signin.*
 
 class SigninActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySigninBinding
@@ -30,6 +30,7 @@ class SigninActivity : AppCompatActivity() {
         BindingSigninActivity().EmailLoginBinding(binding)
         BindingSigninActivity().PasswordLoginBinding(binding)
         BindingSigninActivity().phonenosigninbinding(binding);
+        frame_signin_load.visibility = View.GONE
         firebaseauth = FirebaseAuth.getInstance()
         termscond = findViewById(R.id.termsandconditions)
        back = findViewById(R.id.signin_back)
@@ -42,6 +43,8 @@ class SigninActivity : AppCompatActivity() {
         termscond.text = "Terms & Conditions"
 
         binding.signinContinue.setOnClickListener {
+            frame_signin_load.visibility=View.VISIBLE
+            lottie_signin_load.playAnimation()
             val email = binding.textInputEmailSignin.text.toString()
             val pass = binding.textInputPasswordSignin.text.toString()
             val conpass = binding.textInputConfirmpasswordSignin.text.toString()
@@ -52,24 +55,37 @@ class SigninActivity : AppCompatActivity() {
                             val userprofilesignindata = Informationdata(email,"","","","","",0,FirebaseAuth.getInstance().currentUser!!.uid,"No","https://firebasestorage.googleapis.com/v0/b/skidoc-efa6f.appspot.com/o/DummyProfileImage.png?alt=media&token=94419938-344e-4631-b4f8-86db0410b1ab")
                             db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).set(userprofilesignindata).addOnCompleteListener {
                                  firebaseauth.currentUser?.sendEmailVerification()!!.addOnSuccessListener {
+                                     lottie_signin_load.cancelAnimation()
+                                     frame_signin_load.visibility =View.GONE
                                      val intent = Intent(this,EmailVarificationActivity::class.java)
-                                                   this.startActivity(intent)
+                                      finish()
+                                     this.startActivity(intent)
                                  }
                                      .addOnFailureListener { it1 ->
+                                         lottie_signin_load.cancelAnimation()
+                                         frame_signin_load.visibility =View.GONE
                                          Toast.makeText(this,it1.toString(),Toast.LENGTH_LONG).show()
                                      }
                             }.addOnFailureListener { it2 ->
+                                lottie_signin_load.cancelAnimation()
+                                frame_signin_load.visibility =View.GONE
                                 Toast.makeText(this,it2.toString(),Toast.LENGTH_LONG).show()
                             }
 
                         }else{
-                            Toast.makeText(this,it.toString(),Toast.LENGTH_LONG).show()
+                            lottie_signin_load.cancelAnimation()
+                            frame_signin_load.visibility =View.GONE
+                            Toast.makeText(this,"This user is already present in out database",Toast.LENGTH_LONG).show()
                         }
                     }
                 }else{
+                    lottie_signin_load.cancelAnimation()
+                    frame_signin_load.visibility =View.GONE
                     Toast.makeText(this,"Plz fill the password same",Toast.LENGTH_LONG).show()
                 }
             }else{
+                lottie_signin_load.cancelAnimation()
+                frame_signin_load.visibility =View.GONE
                 Toast.makeText(this,"Plz fill all the fields",Toast.LENGTH_LONG).show()
             }
         }

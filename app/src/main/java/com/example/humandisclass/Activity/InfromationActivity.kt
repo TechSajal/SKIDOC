@@ -3,21 +3,15 @@ package com.example.humandisclass.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
-import com.example.humandisclass.Activity.Data.Informationdata
-import com.example.humandisclass.Activity.Helper.BindingInfromationActivity
+import com.example.humandisclass.Helper.BindingInfromationActivity
 import com.example.humandisclass.R
 import com.example.humandisclass.databinding.ActivityInfromationBinding
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 
 class InfromationActivity : AppCompatActivity() {
     private lateinit var auth:FirebaseAuth
@@ -82,7 +76,10 @@ class InfromationActivity : AppCompatActivity() {
         val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
            db.collection("users").document(currentuserid).update(map)
                .addOnSuccessListener {
-                   Toast.makeText(this,"Updated",Toast.LENGTH_LONG).show()
+                   val i = Intent(this,MainActivity::class.java)
+                   finish()
+                   startActivity(i)
+
                }
                .addOnFailureListener {
                    Toast.makeText(this,it.toString(),Toast.LENGTH_LONG).show()

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.example.humandisclass.Activity.Adapters.ViewPagerAdapter
+import com.example.humandisclass.Adapters.ViewPagerAdapter
 import com.example.humandisclass.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout

@@ -16,24 +16,25 @@ class EmailVarificationActivity : AppCompatActivity() {
     private lateinit var firebaseauth: FirebaseAuth
     private  lateinit var db : FirebaseFirestore
     private lateinit var resendlink:TextView
+    private val currentuserid = FirebaseAuth.getInstance().currentUser!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_email_varification)
-        db = FirebaseFirestore.getInstance()
-        firebaseauth = FirebaseAuth.getInstance()
         varifybutton = findViewById(R.id.emailverified)
         resendlink = findViewById(R.id.resendverificationlink)
         varifybutton.setOnClickListener {
-            val isverified = firebaseauth.currentUser?.isEmailVerified
-            if (isverified == true){
+            val isverified = currentuserid.isEmailVerified
+            if (isverified){
                  val i = Intent(this,InfromationActivity::class.java)
+                    finish()
                     this.startActivity(i)
-            }else if (isverified == false){
+            }else if (!isverified){
                 Toast.makeText(this,"Please Verify  your email",Toast.LENGTH_LONG).show()
             }
         }
         resendlink.setOnClickListener {
-            firebaseauth.currentUser?.sendEmailVerification()?.addOnSuccessListener {
+
+            FirebaseAuth.getInstance().currentUser?.sendEmailVerification()?.addOnSuccessListener {
                 Toast.makeText(this,"Link has been send to you on your email",Toast.LENGTH_LONG).show()
             }
                 ?.addOnFailureListener {
@@ -41,4 +42,10 @@ class EmailVarificationActivity : AppCompatActivity() {
                 }
         }
     }
+
+    override fun onRestart() {
+        super.onRestart()
+        currentuserid.reload()
+    }
+
 }

@@ -11,11 +11,11 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.humandisclass.Activity.Adapters.CommonDiseaseAdapter
-import com.example.humandisclass.Activity.Adapters.CommonSkinAlergyAdapter
-import com.example.humandisclass.Activity.Adapters.GetComment
+import com.example.humandisclass.Adapters.CommonDiseaseAdapter
+import com.example.humandisclass.Adapters.CommonSkinAlergyAdapter
+import com.example.humandisclass.Adapters.GetComment
 import com.example.humandisclass.Activity.AddAdviceActivity
-import com.example.humandisclass.Activity.Data.getadvice
+import com.example.humandisclass.Data.getadvice
 import com.example.humandisclass.Activity.MainActivity
 import com.example.humandisclass.R
 import com.example.humandisclass.ViewModel.Med2ViewModel

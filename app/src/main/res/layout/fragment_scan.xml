@@ -28,16 +28,6 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/sajal_scan_2" />
 
-<!--    <com.airbnb.lottie.LottieAnimationView-->
-<!--        android:id="@+id/lottie_scan_animation"-->
-<!--        android:layout_width="350dp"-->
-<!--        android:layout_height="300dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_below="@id/scan_text_1"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        app:lottie_autoPlay="true"-->
-<!--        app:lottie_loop="true"-->
-<!--        app:lottie_rawRes="@raw/scanner"/>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/scan_with_camera"
@@ -97,7 +87,6 @@
             android:id="@+id/image_scan_disease"
             android:layout_width="350dp"
             android:layout_height="400dp"
-            android:background="@drawable/img2"
             android:scaleType="fitXY" />
     </FrameLayout>
 

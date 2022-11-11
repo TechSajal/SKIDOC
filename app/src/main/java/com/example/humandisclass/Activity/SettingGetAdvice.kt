@@ -3,7 +3,6 @@ package com.example.humandisclass.Activity
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
@@ -11,11 +10,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
-import com.example.humandisclass.Activity.Adapters.NameDiseaseAdviceAdapter
-import com.example.humandisclass.Activity.Adapters.NameDiseaseSettingAdapter
-import com.example.humandisclass.Activity.Data.getadvice
+import com.example.humandisclass.Adapters.NameDiseaseSettingAdapter
+import com.example.humandisclass.Data.getadvice
 import com.example.humandisclass.R
-import com.example.humandisclass.databinding.ActivitySeeAdviceBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_setting_get_advice.*

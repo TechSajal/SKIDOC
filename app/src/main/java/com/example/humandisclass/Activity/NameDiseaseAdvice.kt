@@ -10,13 +10,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.humandisclass.Activity.Adapters.NameDiseaseAdviceAdapter
-import com.example.humandisclass.Activity.Data.getadvice
+import com.example.humandisclass.Adapters.NameDiseaseAdviceAdapter
+import com.example.humandisclass.Data.getadvice
 import com.example.humandisclass.R
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import org.checkerframework.common.returnsreceiver.qual.This
-import org.w3c.dom.Text
 
 class NameDiseaseAdvice : AppCompatActivity() {
     private lateinit var recyclerViewnameAdvice: RecyclerView

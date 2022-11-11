@@ -23,7 +23,10 @@ class SettingActivity : AppCompatActivity() {
             startActivity(intent)
         }
         back_setting.setOnClickListener {
-            onBackPressed()
+            val i= Intent(this,MainActivity::class.java)
+            i.putExtra("place",1)
+            finish()
+            startActivity(i)
         }
         val currentuserid = FirebaseAuth.getInstance().currentUser!!.uid
         val db = FirebaseFirestore.getInstance()
@@ -55,5 +58,14 @@ class SettingActivity : AppCompatActivity() {
         super.onRestart()
         finish()
         startActivity(intent)
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val i= Intent(this,MainActivity::class.java)
+        i.putExtra("place",1)
+        finish()
+        startActivity(i)
     }
 }

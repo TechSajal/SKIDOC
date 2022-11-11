@@ -53,16 +53,6 @@
             android:text="Unfortunately You have not given any advice"
             android:fontFamily="@font/varela_round"
             android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/addyouradvice_settinggetadvice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add your advice"
-            android:textAlignment="center"
-            android:fontFamily="@font/varela_round"
-            android:textColor="@color/black"
-            android:textSize="12dp"
-            android:layout_marginTop="22dp"/>
     </FrameLayout>
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recycler_view_settinggetadvices"

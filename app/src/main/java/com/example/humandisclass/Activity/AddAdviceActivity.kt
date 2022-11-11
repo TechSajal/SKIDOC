@@ -3,17 +3,14 @@ package com.example.humandisclass.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.humandisclass.Activity.Data.getadvice
 import com.example.humandisclass.R
 import com.example.humandisclass.databinding.ActivityAddAdviceBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_add_advice.*
-import kotlinx.android.synthetic.main.activity_edit_profile2.*
 
 class AddAdviceActivity : AppCompatActivity() {
     private lateinit var binding : ActivityAddAdviceBinding
