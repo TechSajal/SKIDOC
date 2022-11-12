@@ -13,6 +13,7 @@ import com.example.humandisclass.Helper.BindingLoginActivity
 import com.example.humandisclass.R
 import com.example.humandisclass.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding:ActivityLoginBinding
@@ -49,17 +50,21 @@ class LoginActivity : AppCompatActivity() {
             if(email.isEmpty() || pass.isEmpty()){
                 Toast.makeText(this,"Plz fill all the fields",Toast.LENGTH_LONG).show()
             }else{
-               firebaseauth.signInWithEmailAndPassword(email,pass).addOnCompleteListener {
+               firebaseauth.signInWithEmailAndPassword(email,pass).addOnSuccessListener {
                     val isverify = firebaseauth.currentUser?.isEmailVerified
                    if(isverify == true){
                       val intent = Intent(this,MainActivity::class.java)
                        startActivity(intent)
-                        finish()
+                       finish()
                    }else{
                        val intent = Intent(this,EmailVarificationActivity::class.java)
                        this.startActivity(intent)
+                       finish()
                    }
                }
+                   .addOnFailureListener {
+                       Toast.makeText(this,"Plz Signin",Toast.LENGTH_LONG).show()
+                   }
             }
         }
 

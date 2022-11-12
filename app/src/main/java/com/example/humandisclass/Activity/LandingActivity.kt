@@ -10,6 +10,8 @@ import com.example.humandisclass.Adapters.ViewPagerAdapter
 import com.example.humandisclass.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import me.relex.circleindicator.CircleIndicator3
 
 class LandingActivity : AppCompatActivity() {
@@ -22,6 +24,15 @@ class LandingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing)
+        if (intent.getBooleanExtra("EXIT", false)) {
+            finish()
+        }
+        val auth: FirebaseUser? = FirebaseAuth.getInstance().currentUser
+        if (auth != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         emailedittext = findViewById(R.id.textinputedittextstarted)
         emailtextvie = findViewById(R.id.textinputlayoutstarted)
         textviewtrouble = findViewById(R.id.textviewtroublesignin)
@@ -58,4 +69,5 @@ class LandingActivity : AppCompatActivity() {
         addtolist(R.drawable.main1image3,"Read patients' stories and book doctor appointments")
 
     }
+
 }

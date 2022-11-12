@@ -22,6 +22,14 @@ class SettingActivity : AppCompatActivity() {
             val intent = Intent(this,EditProfileActivity2::class.java)
             startActivity(intent)
         }
+        logout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val i =Intent(this,LandingActivity::class.java)
+            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP;
+            i.putExtra("EXIT", true);
+            startActivity(i)
+
+        }
         back_setting.setOnClickListener {
             val i= Intent(this,MainActivity::class.java)
             i.putExtra("place",1)
