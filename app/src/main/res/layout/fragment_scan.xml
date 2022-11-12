@@ -8,9 +8,11 @@
 
     <TextView
         android:id="@+id/scan_text_1"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:textAlignment="viewStart"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/varela_round"
         android:text="Scan the disease to know about the disease"
@@ -81,7 +83,7 @@
         android:layout_width="350dp"
         android:visibility="visible"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/image_scan_disease"
@@ -95,7 +97,7 @@
         android:layout_width="350dp"
         android:layout_height="400dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:scaleType="fitXY"
         android:visibility="invisible"
         app:lottie_autoPlay="true"
@@ -108,7 +110,7 @@
         android:layout_height="130dp"
         android:layout_below="@+id/frame_layout_scan"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/scan_corner"
         android:visibility="visible">
        <com.airbnb.lottie.LottieAnimationView
