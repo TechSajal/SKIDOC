@@ -22,6 +22,7 @@ class SettingActivity : AppCompatActivity() {
             val intent = Intent(this,EditProfileActivity2::class.java)
             startActivity(intent)
         }
+
         logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             val i =Intent(this,LandingActivity::class.java)

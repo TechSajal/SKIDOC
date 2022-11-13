@@ -1,19 +1,16 @@
 package com.example.humandisclass.Model
 
+import com.example.humandisclass.DI.DaggerApiComponents
 import io.reactivex.Single
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
 class DiseaseServices {
-    private val BASE_URL = "https://script.google.com"
-    private val api:DiseaseApi = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .build()
-        .create(DiseaseApi::class.java)
+    @Inject
+    lateinit var api:DiseaseApi
 
+    init {
+       DaggerApiComponents.create().inject(this)
+    }
     fun getdiseasemed2():Single<List<DiseaseData>>{
         return api.getDiseasemed2()
     }

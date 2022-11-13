@@ -3,9 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
-android {
+android{
     compileSdk 33
     defaultConfig {
         applicationId "com.example.humandisclass"
@@ -13,33 +14,37 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
 buildFeatures{
     viewBinding true
 }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     aaptOptions{
         noCompress "tflite"
     }
 }
 def rxJavaVersion = '3.0.0'
 def retrofitVersion = '2.9.0'
-dependencies {
 
+dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
@@ -48,15 +53,15 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
     implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.1'
     implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'com.android.car.ui:car-ui-lib:+'
+    implementation 'com.android.car.ui:car-ui-lib:2.3.0'
     annotationProcessor 'androidx.room:room-compiler:2.4.3'
     implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.2'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'me.relex:circleindicator:2.1.6'
 
@@ -72,12 +77,13 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.1'
     implementation 'com.squareup.picasso:picasso:2.8'
 
-    //
+    //circleimage view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    //firebase
     implementation 'com.firebaseui:firebase-ui-storage:7.2.0'
 
-    //
+    //terserflow
     implementation 'org.tensorflow:tensorflow-lite:+'
 
     //lottie animation
@@ -99,4 +105,10 @@ dependencies {
 
     // simmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //Dependency Injections
+    implementation 'com.google.dagger:dagger:2.43.1'
+    implementation 'com.google.dagger:dagger-android-support:2.43.1'
+    kapt 'com.google.dagger:dagger-android-processor:2.43.1'
+    kapt 'com.google.dagger:dagger-compiler:2.43.1'
 }
