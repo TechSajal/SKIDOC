@@ -1,5 +1,6 @@
 package com.example.humandisclass.ViewModel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.humandisclass.DI.DaggerApiComponents
@@ -19,6 +20,7 @@ class AllDiseaseViewModel:ViewModel() {
       }
     private val disposable = CompositeDisposable()
     val diseases = MutableLiveData<List<DiseaseData>>()
+    val livedata1: MutableLiveData<List<DiseaseData>> = diseases
     val diseaseloaderror = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
 
@@ -42,7 +44,7 @@ class AllDiseaseViewModel:ViewModel() {
 
                     override fun onError(e: Throwable) {
                         diseaseloaderror.value =true
-                        loading.value =true
+                        loading.value =false
                     }
                     override fun onSubscribe(d: Disposable?){}
 

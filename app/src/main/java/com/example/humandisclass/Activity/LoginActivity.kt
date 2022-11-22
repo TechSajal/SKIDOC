@@ -55,6 +55,7 @@ class LoginActivity : AppCompatActivity() {
                    if(isverify == true){
                       val intent = Intent(this,MainActivity::class.java)
                        startActivity(intent)
+                       Toast.makeText(this,getString(R.string.welcome),Toast.LENGTH_LONG).show()
                        finish()
                    }else{
                        val intent = Intent(this,EmailVarificationActivity::class.java)

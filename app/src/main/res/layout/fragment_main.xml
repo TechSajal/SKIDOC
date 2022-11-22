@@ -5,11 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
     android:scrollbars="none"
+    android:id="@+id/main2"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".Frament.MainFragment">
 
     <ImageView

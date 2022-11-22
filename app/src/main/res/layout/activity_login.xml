@@ -65,6 +65,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInput_Email_login"
             android:layout_width="match_parent"
+            android:importantForAutofill="no"
             android:layout_height="wrap_content"
             android:fontFamily="@font/varela_round"
             android:textStyle="bold" />
@@ -88,8 +89,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_input_password_login"
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
+            android:importantForAutofill="no"
             android:fontFamily="@font/varela_round"
             android:inputType="textPassword"
             android:lines="1"
