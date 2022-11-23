@@ -49,6 +49,8 @@ Inplementation :- Kotlin,Ml[Techable Machine],Retrofit,RxJava,MVVM Architecture,
 
 7]DataBase USE:-Firebase,App script
   <p float="left">
-  <img src='https://user-images.githubusercontent.com/57318794/203497908-24d2c449-2601-43cd-8302-178f2ea53153.png'  width="200" height="400"/>
-  <img src='(https://user-images.githubusercontent.com/57318794/203498033-10785a9b-c45a-401e-ba41-1f7da77cbc68.png'  width="200" height="400"/>
+  <img src='https://user-images.githubusercontent.com/57318794/203497908-24d2c449-2601-43cd-8302-178f2ea53153.png'  width="1200" height="800"/>
+</p>
+ <p float="left">
+  <img src='https://user-images.githubusercontent.com/57318794/203498033-10785a9b-c45a-401e-ba41-1f7da77cbc68.png'  width="1200" height="800"/>
 </p>
