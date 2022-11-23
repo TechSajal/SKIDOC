@@ -12,7 +12,7 @@ Inplementation :- Kotlin,Ml[Techable Machine],Retrofit,RxJava,MVVM Architecture,
   [ScreenShot Landing Activity](https://user-images.githubusercontent.com/57318794/203490291-43ea763c-e984-4056-b45a-59e6222ee8da.jpeg)
   
   Login Activity
-  https://user-images.githubusercontent.com/57318794/203490573-4f0aa33a-434b-43e9-83a3-6158ec283963.jpeg
+  <img src='https://user-images.githubusercontent.com/57318794/203490573-4f0aa33a-434b-43e9-83a3-6158ec283963.jpeg'/>
   
   SignIn Activity
   https://user-images.githubusercontent.com/57318794/203490635-50bc2923-9e0f-47db-8bd7-f53fa6e13bf4.jpeg
